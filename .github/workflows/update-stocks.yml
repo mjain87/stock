@@ -1,0 +1,31 @@
+name: Update stock data
+
+on:
+  schedule:
+    # once a day, ~5:00 PM IST, Mon-Fri (after market close)
+    - cron: "30 11 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: market-data          # same group as the index workflow, so they never push at the same time
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch stock data
+        run: python fetch_stocks.py
+      - name: Commit stocks.json
+        run: |
+          git config user.name "market-bot"
+          git config user.email "market-bot@users.noreply.github.com"
+          git add stocks.json
+          git diff --cached --quiet || (git commit -m "stock data update" && git pull --rebase && git push)
