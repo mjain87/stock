@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market Signal – F&O, Intraday, Long-term</title>
+<style>
+:root{--bg:#0f1420;--card:#171e2e;--line:#27304a;--tx:#e8ecf5;--mut:#8b96b3;--up:#22c55e;--dn:#ef4444;--ne:#f59e0b;--ac:#4f8cff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:4px 0 2px}
+.sub{color:var(--mut);font-size:12px;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>div{flex:1 1 170px}
+label{display:block;font-size:12px;color:var(--mut);margin-bottom:4px}
+select,button,input{width:100%;padding:10px;border-radius:8px;border:1px solid var(--line);background:#0f1523;color:var(--tx);font-size:15px}
+button{background:var(--ac);border:0;font-weight:600;cursor:pointer}
+.tabs{display:flex;gap:8px;margin-bottom:14px}
+.tab{flex:1;background:#0f1523;border:1px solid var(--line);color:var(--mut)}
+.tab.on{background:var(--ac);border-color:var(--ac);color:#fff}
+.sig{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.badge{font-size:22px;font-weight:800;padding:10px 16px;border-radius:10px}
+.up{background:rgba(34,197,94,.15);color:var(--up)}.dn{background:rgba(239,68,68,.15);color:var(--dn)}.ne{background:rgba(245,158,11,.15);color:var(--ne)}
+.pill{display:inline-block;font-size:11px;font-weight:700;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.meter{height:10px;border-radius:6px;background:linear-gradient(90deg,var(--dn),var(--ne),var(--up));position:relative;margin:10px 0 4px}
+.meter i{position:absolute;top:-4px;width:4px;height:18px;background:#fff;border-radius:2px;transform:translateX(-2px)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td,th{padding:6px 4px;border-bottom:1px solid var(--line);text-align:left}
+th{color:var(--mut);font-weight:500}
+.pos{color:var(--up)}.neg{color:var(--dn)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.kv{background:#0f1523;border:1px solid var(--line);border-radius:8px;padding:8px}
+.kv b{display:block;font-size:12px;color:var(--mut);font-weight:500}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px}
+.plan{border:1px solid var(--line);border-radius:10px;padding:10px;background:#0f1523}
+.plan.pref{border-color:var(--ac);box-shadow:0 0 0 1px var(--ac) inset}
+.plan h3{margin:0 0 6px;font-size:15px}
+.plan td:first-child{color:var(--mut);width:42%}
+.warn{font-size:12px;color:var(--mut);border-left:3px solid var(--ne);padding-left:10px}
+ul{margin:6px 0 0;padding-left:18px}
+a{color:var(--ac)}
+.lt{min-width:760px}
+.lt tr.r{cursor:pointer}
+.lt tr.r:hover{background:rgba(79,140,255,.08)}
+.lt tr.det td{background:#0f1523;padding:10px}
+.bar{height:6px;border-radius:4px;background:var(--line);margin-top:3px;overflow:hidden}
+.bar i{display:block;height:100%}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Market Signal – F&amp;O · Intraday · Long-term Shares</h1>
+<div class="sub" id="updated">data load ho raha hai…</div>
+
+<div class="tabs">
+  <button class="tab on" id="tabB-fno">F&amp;O / Intraday</button>
+  <button class="tab" id="tabB-lt">Long-term Shares</button>
+</div>
+
+<!-- ======================= F&O / INTRADAY ======================= -->
+<div id="tab-fno">
+<div class="card">
+  <div class="row">
+    <div><label>Index (Future/Option)</label>
+      <select id="idx"><option value="nifty">NIFTY 50</option><option value="banknifty">BANK NIFTY</option><option value="sensex">SENSEX</option></select></div>
+    <div><label>Expiry date</label><select id="exp"></select></div>
+    <div><label>Mode</label>
+      <select id="mode"><option value="pos">Positional (expiry tak)</option><option value="intra">Intraday (aaj ke liye)</option></select></div>
+    <div><label>&nbsp;</label><button id="go">Analyze karo</button></div>
+  </div>
+  <div class="row" style="margin-top:10px">
+    <div><label>FII net ₹Cr (optional, manual)</label><input id="fiiM" type="number" step="any" placeholder="jaise -1500"></div>
+    <div><label>DII net ₹Cr (optional, manual)</label><input id="diiM" type="number" step="any" placeholder="jaise 2200"></div>
+  </div>
+  <div class="sub" style="margin:6px 0 0">NSE data auto na aaye to NSE ya news se aaj ka FII/DII net (cash) yahan daalein; ye auto data ko override karega.</div>
+</div>
+
+<div id="out" style="display:none">
+  <div class="card">
+    <div class="sig">
+      <div class="badge" id="view"></div>
+      <div style="flex:1;min-width:220px">
+        <div id="action" style="font-size:18px;font-weight:700"></div>
+        <div id="strike" style="color:var(--mut)"></div>
+      </div>
+    </div>
+    <div class="meter"><i id="needle"></i></div>
+    <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--mut)"><span>Strong Bearish</span><span>Neutral</span><span>Strong Bullish</span></div>
+    <div id="conf" style="margin-top:8px;font-size:13px"></div>
+  </div>
+
+  <div class="card" id="cIntra" style="display:none"><b id="intraTitle"></b>
+    <div id="intraStatus" style="font-size:13px;margin:6px 0 10px"></div>
+    <div class="two" id="intraPlans"></div>
+    <ul id="intraRules" style="font-size:13px"></ul>
+    <div class="sub" style="margin-top:8px">Premium Black-Scholes se <b>andaza</b> hai (IV = India VIX). SL / Target index ke daily ATR ke multiple hain (SL 0.3×, T1 0.35×, T2 0.7×). Asli LTP broker par dekhein.</div></div>
+
+  <div class="card" id="cStrike"><b>Kaun si strike lein (CE / PE)</b>
+    <div id="strikeNote" style="font-size:13px;margin:6px 0"></div>
+    <table id="strikes"><thead><tr><th>Strike</th><th>Type</th><th>Est. premium</th><th>Delta</th><th>Target par</th><th>SL par</th><th>Risk:Reward</th></tr></thead><tbody></tbody></table>
+    <div class="sub" style="margin-top:8px">Premium Black-Scholes se <b>andaza</b> hai (IV = India VIX, 1 din ka theta). Asli LTP broker par alag hoga &ndash; entry se pehle wahi dekhein. "Target/SL par" = index spot Target 1 / Support-Resistance SL par estimated premium.</div></div>
+
+  <div class="card"><b id="levelsTitle">Levels (spot par based)</b>
+    <div class="grid" id="levels" style="margin-top:8px"></div></div>
+
+  <div class="card"><b>Score breakup</b>
+    <table id="factors"><thead><tr><th>Parameter</th><th>Value</th><th>Score</th><th>Weight</th></tr></thead><tbody></tbody></table></div>
+
+  <div class="card"><b>Global markets &amp; commodities</b>
+    <table id="glob"><tbody></tbody></table></div>
+
+  <div class="card"><b>News (India)</b><ul id="nIn"></ul><br><b>News (Global)</b><ul id="nGl"></ul></div>
+</div>
+</div>
+
+<!-- ======================= LONG-TERM SHARES ======================= -->
+<div id="tab-lt" style="display:none">
+  <div class="card" id="regime"></div>
+  <div class="card">
+    <div class="row">
+      <div><label>Sector</label><select id="fSec"></select></div>
+      <div><label>Verdict</label><select id="fVer"><option value="">Sab</option><option value="ACC">BUY (Accumulate)</option><option value="HOLD">Hold</option><option value="TRIM">Profit book</option><option value="AVOID">Avoid</option><option value="SELL">Sell / Exit</option></select></div>
+      <div><label>Sort</label><select id="fSort"><option value="score">Score (high → low)</option><option value="ret12m">12M return</option><option value="upside">Analyst upside</option><option value="pe">PE (low → high)</option></select></div>
+      <div><label>Search</label><input id="fQ" type="search" placeholder="naam / symbol"></div>
+    </div>
+    <div class="sub" id="ltInfo" style="margin:8px 0 0"></div>
+  </div>
+  <div class="card" style="overflow-x:auto">
+    <table class="lt" id="ltTable"><thead><tr><th>Share</th><th>Sector</th><th>Price</th><th style="width:110px">Score</th><th>Verdict</th><th>12M</th><th>PE</th><th>ROE</th><th>52w high se</th><th>Analyst upside</th></tr></thead><tbody></tbody></table>
+  </div>
+  <div class="card" style="font-size:13px"><b>Labels ka matlab</b><ul>
+    <li><span class="pill up">BUY</span> naya paisa kiston me lagane layak (score accha, valuation/trend theek)</li>
+    <li><span class="pill ne">HOLD</span> jo hai rakhein, naya paisa abhi nahi</li>
+    <li><span class="pill ne">PROFIT BOOK</span> company achhi par share mehenga + overheated &ndash; hai to 25–30% bechein</li>
+    <li><span class="pill dn">AVOID</span> naya na lein</li>
+    <li><span class="pill dn">SELL / EXIT</span> trend toota + score kamzor &ndash; hai to nikalne par vichar karein</li></ul>
+    <div class="sub" style="margin:6px 0 0">BUY ke alawa baaki labels un logon ke liye hain jinke paas wo share pehle se hai. Kisi bhi share par click karein &ndash; kaaran, tarika, levels aur poora score breakup khulega.</div></div>
+</div>
+
+<div class="card warn">
+Yeh app sirf <b>educational / research tool</b> hai, SEBI-registered investment advice nahi. Signals rule-based scoring se bante hain (technical, FII/DII, global, OI, news, valuation, quality) aur galat bhi ho sakte hain; kisi bhi score ka backtest nahi kiya gaya hai. F&amp;O / intraday mein bada nuksan ho sakta hai &ndash; apni study aur stop-loss ke saath hi trade karein. Data free sources se delay ke saath aata hai; trade / investment se pehle broker platform par confirm karein.
+</div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let D = null, S = null;
+
+/* ---------- expiry calendar ----------
+   NSE (Nifty) weekly = Tuesday, monthly = last Tuesday
+   BSE (Sensex) weekly = Thursday, monthly = last Thursday
+   Bank Nifty = only monthly, last Tuesday
+   Holiday adjustment: add dates here (YYYY-MM-DD) from the NSE/BSE holiday list. Expiry moves to previous trading day. */
+const HOLIDAYS = ["2026-11-24","2026-12-25"];
+const CFG = {
+  nifty:    {dow:2, weekly:true,  step:50,  name:"NIFTY"},
+  banknifty:{dow:2, weekly:false, step:100, name:"BANKNIFTY"},
+  sensex:   {dow:4, weekly:true,  step:100, name:"SENSEX"}
+};
+const iso = d => d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+function prevTradingDay(d){
+  d = new Date(d);
+  while(d.getDay()===0 || d.getDay()===6 || HOLIDAYS.includes(iso(d))) d.setDate(d.getDate()-1);
+  return d;
+}
+function lastDow(y,m,dow){
+  const d = new Date(y,m+1,0);
+  while(d.getDay()!==dow) d.setDate(d.getDate()-1);
+  return d;
+}
+function expiries(key){
+  const c = CFG[key], out = [], now = new Date(); now.setHours(0,0,0,0);
+  const mk = d => {
+    const isMonthly = iso(d)===iso(lastDow(d.getFullYear(),d.getMonth(),c.dow));
+    return {d, monthly:isMonthly};
+  };
+  if(c.weekly){
+    const d = new Date(now);
+    while(d.getDay()!==c.dow) d.setDate(d.getDate()+1);
+    for(let i=0;i<8;i++){
+      const e = mk(new Date(d));
+      const adj = prevTradingDay(e.d);
+      if(adj>=now) out.push({date:adj, monthly:e.monthly});
+      d.setDate(d.getDate()+7);
+    }
+  }
+  let y = now.getFullYear(), m = now.getMonth(), n = 0;
+  while(n < (c.weekly?3:4)){
+    const adj = prevTradingDay(lastDow(y,m,c.dow));
+    if(adj>=now && !out.some(o=>iso(o.date)===iso(adj))) {out.push({date:adj, monthly:true}); n++;}
+    else if(adj>=now) n++;
+    m++; if(m>11){m=0;y++;}
+  }
+  out.sort((a,b)=>a.date-b.date);
+  return out;
+}
+const DAYS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+function fillExp(){
+  const list = expiries($("idx").value);
+  $("exp").innerHTML = list.map(e=>`<option value="${iso(e.date)}">${iso(e.date)} (${DAYS[e.date.getDay()]}) ${e.monthly?"· Monthly":"· Weekly"}</option>`).join("");
+}
+
+/* ---------- helpers ---------- */
+const clamp=(x,a=-1,b=1)=>Math.max(a,Math.min(b,x));
+const f2=x=>(x==null||isNaN(x))?"–":Number(x).toLocaleString("en-IN",{maximumFractionDigits:2});
+const pct=x=>(x==null||isNaN(x))?"–":(x>=0?"+":"")+x.toFixed(2)+"%";
+function istNow(){const n=new Date();return new Date(n.getTime()+(330+n.getTimezoneOffset())*60000);}
+function isLive(it){
+  const n=istNow(), m=n.getHours()*60+n.getMinutes(), d=n.getDay();
+  return d>=1 && d<=5 && iso(n)===it.session_date && m>=555 && m<=935;   // 9:15 - 15:35 IST
+}
+function getFD(){
+  const fd = Object.assign({}, D.fii_dii||{});
+  const mf=parseFloat($("fiiM").value), md=parseFloat($("diiM").value);
+  if(!isNaN(mf)){fd.fii_net=mf;fd.date="manual";}
+  if(!isNaN(md)){fd.dii_net=md;}
+  return fd;
+}
+const avg=a=>a.reduce((x,y)=>x+y,0)/a.length;
+
+/* ---------- Black-Scholes (estimate only) ---------- */
+function ncdf(x){const t=1/(1+0.2316419*Math.abs(x)),d=0.3989423*Math.exp(-x*x/2);
+  const p=d*t*(0.3193815+t*(-0.3565638+t*(1.781478+t*(-1.821256+t*1.330274))));return x>0?1-p:p;}
+function bs(S_,K,T,iv,call){
+  const r=0.065; if(T<=0) return Math.max(0,call?S_-K:K-S_);
+  const sq=iv*Math.sqrt(T), d1=(Math.log(S_/K)+(r+iv*iv/2)*T)/sq, d2=d1-sq;
+  return call? S_*ncdf(d1)-K*Math.exp(-r*T)*ncdf(d2) : K*Math.exp(-r*T)*ncdf(-d2)-S_*ncdf(-d1);
+}
+function bsDelta(S_,K,T,iv,call){
+  const r=0.065, sq=iv*Math.sqrt(T), d1=(Math.log(S_/K)+(r+iv*iv/2)*T)/sq;
+  return call? ncdf(d1) : ncdf(d1)-1;
+}
+function daysTo(expISO){
+  const t0=new Date(); t0.setHours(0,0,0,0);
+  return Math.max(0, Math.round((new Date(expISO+"T00:00:00")-t0)/86400000));
+}
+
+/* =====================  POSITIONAL SCORING  ===================== */
+function analyze(key, expISO){
+  const ix = D.indices && D.indices[key];
+  if(!ix) return null;
+  const g = D.global||{}, F = [];
+  const add=(name,val,score,w)=>F.push({name,val,score:clamp(score),w});
+
+  add("Price vs EMA20", f2(ix.price)+" / "+f2(ix.ema20), (ix.price-ix.ema20)/ix.ema20*100/1.0, 6);
+  add("EMA20 vs EMA50", f2(ix.ema20)+" / "+f2(ix.ema50), (ix.ema20-ix.ema50)/ix.ema50*100/1.5, 6);
+  if(ix.sma200) add("Price vs 200 SMA", f2(ix.sma200), (ix.price-ix.sma200)/ix.sma200*100/4, 6);
+  add("RSI(14)", ix.rsi, ix.rsi>=70 ? -0.3 : ix.rsi<=30 ? 0.3 : (ix.rsi-50)/20, 8);
+  add("MACD histogram", ix.macd_hist, ix.macd_hist/(ix.atr*0.15||1), 7);
+  add("Pichla din (change)", pct(ix.chg_pct), ix.chg_pct/1.0, 4);
+  const pos = (ix.price-ix.pivot)/(ix.r1-ix.pivot||1);
+  add("Price vs Pivot", "Pivot "+f2(ix.pivot), pos, 3);
+
+  const fd = getFD();
+  if(fd.fii_net!=null) add("FII net (cash) ₹Cr", f2(fd.fii_net)+" ("+(fd.date||"")+")", fd.fii_net/3000, 12);
+  if(fd.dii_net!=null) add("DII net (cash) ₹Cr", f2(fd.dii_net), fd.dii_net/3000, 6);
+
+  const gq=(k)=>g[k]?g[k].chg_pct:null;
+  const us = [gq("sp500"),gq("nasdaq"),gq("dow")].filter(x=>x!=null);
+  if(us.length) add("US markets (avg chg)", pct(avg(us)), avg(us)/0.8, 8);
+  const asia=[gq("nikkei"),gq("hangseng")].filter(x=>x!=null);
+  if(asia.length) add("Asia (Nikkei/HSI)", pct(avg(asia)), avg(asia)/0.8, 4);
+  const eu=[gq("ftse"),gq("dax")].filter(x=>x!=null);
+  if(eu.length) add("Europe (FTSE/DAX)", pct(avg(eu)), avg(eu)/0.8, 3);
+  if(g.crude) add("Crude oil", pct(g.crude.chg_pct), -g.crude.chg_pct/2.5, 3);
+  if(g.usdinr) add("USD/INR", pct(g.usdinr.chg_pct), -g.usdinr.chg_pct/0.4, 2);
+  if(g.dxy) add("Dollar Index", pct(g.dxy.chg_pct), -g.dxy.chg_pct/0.6, 2);
+  if(g.us10y) add("US 10Y yield", pct(g.us10y.chg_pct), -g.us10y.chg_pct/2, 2);
+
+  const oi = D.oi && D.oi[key];
+  if(oi){
+    add("PCR (nearest expiry)", oi.pcr, (oi.pcr-1)/0.35, 6);
+    const mid=(oi.max_put_strike+oi.max_call_strike)/2;
+    add("Max OI zone", "Put "+oi.max_put_strike+" / Call "+oi.max_call_strike, (ix.price-mid)/((oi.max_call_strike-oi.max_put_strike)/2||1), 4);
+  }
+
+  if(g.vix) add("India VIX", f2(g.vix.price), g.vix.price>20 ? -0.4 : g.vix.price<14 ? 0.2 : 0, 3);
+  if(D.news){
+    if(D.news.india_score!=null) add("News sentiment – India", D.news.india_score, D.news.india_score*1.5, 4);
+    if(D.news.global_score!=null) add("News sentiment – Global", D.news.global_score, D.news.global_score*1.5, 3);
+  }
+  const W = F.reduce((a,f)=>a+f.w,0);
+  const score = F.reduce((a,f)=>a+f.score*f.w,0)/W;
+  const agree = F.filter(f=>Math.sign(f.score)===Math.sign(score) && Math.abs(f.score)>0.1).reduce((a,f)=>a+f.w,0)/W;
+  return {ix,F,score,agree,dte:daysTo(expISO),oi,intra:false};
+}
+
+/* =====================  INTRADAY SCORING  ===================== */
+function analyzeIntra(key, expISO){
+  const ix = D.indices && D.indices[key];
+  if(!ix || !ix.intra) return null;
+  const it = ix.intra, g = D.global||{}, F = [];
+  const live = isLive(it), last = it.last;
+  const add=(name,val,score,w)=>F.push({name,val,score:clamp(score),w});
+
+  if(it.gap_pct!=null) add("Gap (open vs pichla close)", pct(it.gap_pct), it.gap_pct/0.6, 4);
+  const mv=(last-it.open)/it.open*100;
+  add(live?"Price vs aaj ka open":"Price vs session open", pct(mv), mv/0.5, 6);
+  if(it.or_ready && it.or_high!=null){
+    const mid=(it.or_high+it.or_low)/2, half=(it.or_high-it.or_low)/2||1;
+    const s = last>it.or_high ? 1 : last<it.or_low ? -1 : (last-mid)/half*0.5;
+    add("Opening range (9:15–9:45)", f2(it.or_low)+" – "+f2(it.or_high), s, 8);
+  }
+  add("15-min EMA9 vs EMA21", f2(it.ema9)+" / "+f2(it.ema21), (it.ema9-it.ema21)/it.ema21*100/0.25, 8);
+  add("15-min RSI", f2(it.rsi15), it.rsi15>=75 ? -0.3 : it.rsi15<=25 ? 0.3 : (it.rsi15-50)/20, 5);
+  const lv = live ? (it.lv_prev||it.lv_next) : it.lv_next;
+  if(lv) add("Price vs Pivot", "Pivot "+f2(lv.p), (last-lv.p)/((lv.r1-lv.p)||1), 4);
+  add("Daily trend (EMA20 vs EMA50)", f2(ix.ema20)+" / "+f2(ix.ema50), (ix.ema20-ix.ema50)/ix.ema50*100/1.5, 4);
+
+  const fd = getFD();
+  if(fd.fii_net!=null) add("FII net (cash) ₹Cr", f2(fd.fii_net)+" ("+(fd.date||"")+")", fd.fii_net/3000, 6);
+  const gq=(k)=>g[k]?g[k].chg_pct:null;
+  const us=[gq("sp500"),gq("nasdaq"),gq("dow")].filter(x=>x!=null);
+  if(us.length) add("US markets (avg chg)", pct(avg(us)), avg(us)/0.8, 6);
+  const asia=[gq("nikkei"),gq("hangseng")].filter(x=>x!=null);
+  if(asia.length) add("Asia (Nikkei/HSI)", pct(avg(asia)), avg(asia)/0.8, 4);
+  if(g.crude) add("Crude oil", pct(g.crude.chg_pct), -g.crude.chg_pct/2.5, 2);
+  if(g.vix) add("India VIX", f2(g.vix.price), g.vix.price>20 ? -0.4 : g.vix.price<14 ? 0.2 : 0, 3);
+  if(D.news && D.news.india_score!=null) add("News sentiment – India", D.news.india_score, D.news.india_score*1.5, 3);
+
+  const W = F.reduce((a,f)=>a+f.w,0);
+  const score = F.reduce((a,f)=>a+f.score*f.w,0)/W;
+  const agree = F.filter(f=>Math.sign(f.score)===Math.sign(score) && Math.abs(f.score)>0.1).reduce((a,f)=>a+f.w,0)/W;
+  return {ix,it,live,lv,F,score,agree,dte:daysTo(expISO),oi:D.oi&&D.oi[key],intra:true};
+}
+
+/* =====================  RENDER (F&O tab)  ===================== */
+function renderPos(r,key,exp,bull,bear,strong){
+  const {ix,dte,oi}=r, c=CFG[key];
+  const atm=Math.round(ix.price/c.step)*c.step;
+  const recOff = (strong && dte>=3) ? 0 : 1;          // 0 = ATM, 1 = ek strike ITM
+  const recK = bull ? atm - recOff*c.step : atm + recOff*c.step;
+  const recTxt = recOff ? "1 strike ITM" : "ATM";
+  let action, strike;
+  if(bull){
+    action = (strong?"BUY CE":"BUY CE (halka signal)");
+    strike = `${c.name} ${recK} CE (${recTxt}) · Expiry ${exp}`;
+  } else if(bear){
+    action = (strong?"BUY PE":"BUY PE (halka signal)");
+    strike = `${c.name} ${recK} PE (${recTxt}) · Expiry ${exp}`;
+  } else {
+    action = "TRADE AVOID karein / wait karein";
+    strike = "Signal clear nahi hai – range-bound market mein option buying mein theta decay hota hai.";
+  }
+  if(dte<=1 && (bull||bear)) strike += " · ⚠ Expiry bahut paas hai, premium bahut tez ghat sakta hai.";
+  $("action").textContent=action; $("strike").textContent=strike;
+
+  const sl = bull ? ix.s1 : bear ? ix.r1 : null;
+  const t1 = bull ? ix.r1 : bear ? ix.s1 : null;
+  const t2 = bull ? ix.r2 : bear ? ix.s2 : null;
+  const kv=(k,v)=>`<div class="kv"><b>${k}</b>${v}</div>`;
+  $("levelsTitle").textContent="Levels (spot par based)";
+  $("levels").innerHTML=[
+    kv("Spot (last close)",f2(ix.price)), kv("ATM strike",atm),
+    kv("Support S1 / S2",f2(ix.s1)+" / "+f2(ix.s2)), kv("Resistance R1 / R2",f2(ix.r1)+" / "+f2(ix.r2)),
+    kv("Spot SL (index level)", sl?f2(sl):"–"), kv("Spot Target 1 / 2", t1?f2(t1)+" / "+f2(t2):"–"),
+    kv("20-din High / Low",f2(ix.hi20)+" / "+f2(ix.lo20)), kv("ATR(14) daily",f2(ix.atr)),
+    oi?kv("OI Support / Resistance",oi.max_put_strike+" / "+oi.max_call_strike):""
+  ].join("");
+
+  const stb=$("strikes").querySelector("tbody");
+  if(!(bull||bear)){
+    stb.innerHTML=""; $("strikeNote").textContent="Signal neutral hai, isliye koi strike suggest nahi ki gayi. Clear signal aane ka wait karein.";
+    return;
+  }
+  const call=bull, iv=((D.global&&D.global.vix&&D.global.vix.price)||15)/100;
+  const T0=Math.max(dte,0.3)/365, T1=Math.max(dte-1,0.1)/365;
+  const rows=[];
+  for(let o=-2;o<=2;o++){            // o<0 ITM, 0 ATM, o>0 OTM
+    const K = call ? atm + o*c.step : atm - o*c.step;
+    const p0=bs(ix.price,K,T0,iv,call), pT=bs(t1,K,T1,iv,call), pS=bs(sl,K,T1,iv,call);
+    const dl=Math.abs(bsDelta(ix.price,K,T0,iv,call));
+    const rr=(p0-pS)>0.5 ? (pT-p0)/(p0-pS) : null;
+    rows.push({K,o,p0,pT,pS,dl,rr});
+  }
+  stb.innerHTML=rows.map(x=>{
+    const rec=(x.o===-recOff);
+    const typ=x.o<0?"ITM "+(-x.o):x.o===0?"ATM":"OTM "+x.o;
+    return `<tr style="${rec?"background:rgba(79,140,255,.18);font-weight:600":""}"><td>${x.K} ${call?"CE":"PE"}${rec?" ★":""}</td><td>${typ}</td><td>₹${x.p0.toFixed(0)}</td><td>${x.dl.toFixed(2)}</td><td>₹${x.pT.toFixed(0)}</td><td>₹${x.pS.toFixed(0)}</td><td>${(x.rr==null||x.rr<=0)?"–":"1 : "+x.rr.toFixed(1)}</td></tr>`;}).join("");
+  let note=`★ Suggested: <b>${recK} ${call?"CE":"PE"}</b> (${recTxt}). `;
+  note += recOff ? (dte<3 ? "Expiry paas hai, isliye ITM (zyada delta, kam theta risk). " : "Signal itna strong nahi hai, isliye ITM (zyada delta, kam risk). ") : "Signal strong aur expiry door hai, isliye ATM (balanced). ";
+  const rec=rows.find(x=>x.o===-recOff);
+  if(rec){
+    note+=` <br>Entry ~₹${rec.p0.toFixed(0)} maanein to premium-based plan: <b>SL ~₹${(rec.p0*0.7).toFixed(0)}</b> (&minus;30%), <b>Target ~₹${(rec.p0*1.5).toFixed(0)}</b> (+50%).`;
+    if(rec.rr!=null && rec.rr<1) note+=` <br>⚠ Spot SL/Target levels ke hisaab se risk:reward kamzor (1:${rec.rr.toFixed(1)}) hai &ndash; chhota size rakhein ya better entry ka wait karein.`;
+  }
+  note += " <br>Sasti OTM strike mein jeet kam baar hoti hai (delta kam) &ndash; sirf bahut strong signal par aur chhote size mein.";
+  if(oi){
+    if(call && oi.max_call_strike) note+=` <br>OI wall: Call side par sabse zyada OI <b>${oi.max_call_strike}</b> par hai &ndash; spot wahan pahunche to profit book karne par vichar karein.`;
+    if(!call && oi.max_put_strike) note+=` <br>OI support: Put side par sabse zyada OI <b>${oi.max_put_strike}</b> par hai &ndash; wahan spot pahunche to profit book karne par vichar karein.`;
+  }
+  if(dte<=1) note+=" <br>⚠ Expiry-day par OTM strike zero ho sakti hai; position size chhota rakhein.";
+  if(key==="sensex") note+=" <br>Sensex ke liye IV India VIX se liya hai, isliye premium sirf mota andaza hai.";
+  $("strikeNote").innerHTML=note;
+}
+
+function renderIntra(r,key,exp,bull,bear,strong){
+  const {ix,it,live,lv,dte}=r, c=CFG[key], atr=ix.atr, step=c.step;
+  const g=D.global||{}, iv=((g.vix&&g.vix.price)||15)/100;
+  const ageMin = D.updated ? (Date.now()-new Date(D.updated).getTime())/60000 : null;
+
+  let up,dn,refLbl;
+  if(live && it.or_ready && it.or_high!=null){up=it.or_high;dn=it.or_low;refLbl="Opening range (9:15–9:45) High/Low";}
+  else if(live){up=it.prev_high||it.high;dn=it.prev_low||it.low;refLbl="Pichle din ka High/Low (opening range abhi ban rahi hai)";}
+  else {up=it.high;dn=it.low;refLbl="Aakhri session ka High/Low (agle din ke liye)";}
+
+  const T0=Math.max(dte,0.15)/365, Tx=Math.max(T0-0.08/365,0.04/365);
+  const slD=0.3*atr, t1D=0.35*atr, t2D=0.7*atr, expiryDay=(dte===0);
+  const mk=(call)=>{
+    const trig=call?up:dn, sg=call?1:-1;
+    const atm=Math.round(trig/step)*step;
+    const K = expiryDay ? (call?atm-step:atm+step) : atm;          // expiry day: 1 strike ITM
+    const sl=trig-sg*slD, t1=trig+sg*t1D, t2=trig+sg*t2D;
+    const p0=bs(trig,K,T0,iv,call), pS=bs(sl,K,Tx,iv,call), p1=bs(t1,K,Tx,iv,call), p2=bs(t2,K,Tx,iv,call);
+    return {call,trig,K,sl,t1,t2,p0,pS,p1,p2,rr:(p0-pS)>0.5?(p1-p0)/(p0-pS):null};
+  };
+  const ce=mk(true), pe=mk(false);
+
+  $("action").textContent = bull ? (strong?"CE side preferred – breakout par BUY CE":"CE side halka preferred")
+                          : bear ? (strong?"PE side preferred – breakdown par BUY PE":"PE side halka preferred")
+                          : "Bias neutral – jo trigger pehle toote wahi side, warna no-trade";
+  $("strike").textContent = `CE trigger ${f2(ce.trig)} (upar) · PE trigger ${f2(pe.trig)} (neeche) · ${refLbl}`;
+
+  $("intraTitle").textContent=`Intraday plan – ${c.name} · Expiry ${exp}`;
+  let st = live ? `<span class="pos">● Market LIVE</span> · last 15-min bar ${esc(it.last_bar)} · spot ${f2(it.last)}`
+                : `<span style="color:var(--ne)">● Market band / data purana</span> · yeh plan <b>agle session</b> ke liye ${esc(it.session_date)} ke levels par based hai`;
+  if(ageMin!=null) st += ` · data ${Math.round(ageMin)} min purana`;
+  $("intraStatus").innerHTML=st;
+
+  const plan=(p)=>{
+    const pref=(p.call&&bull)||(!p.call&&bear);
+    const lbl=p.call?"CE":"PE";
+    return `<div class="plan${pref?" pref":""}"><h3>BUY ${lbl} ${pref?"★ preferred":""}</h3><table><tbody>
+    <tr><td>Trigger</td><td>15-min candle <b>close ${p.call?"upar":"neeche"} ${f2(p.trig)}</b></td></tr>
+    <tr><td>Strike</td><td><b>${c.name} ${p.K} ${lbl}</b>${expiryDay?" (1 ITM)":" (ATM)"}</td></tr>
+    <tr><td>Est. entry premium</td><td>₹${p.p0.toFixed(0)}</td></tr>
+    <tr><td>Stop-loss</td><td>Spot ${f2(p.sl)} · premium ~₹${p.pS.toFixed(0)}</td></tr>
+    <tr><td>Target 1</td><td>Spot ${f2(p.t1)} · ~₹${p.p1.toFixed(0)}</td></tr>
+    <tr><td>Target 2</td><td>Spot ${f2(p.t2)} · ~₹${p.p2.toFixed(0)}</td></tr>
+    <tr><td>Risk:Reward (T1)</td><td>${(p.rr==null||p.rr<=0)?"–":"1 : "+p.rr.toFixed(1)}</td></tr></tbody></table></div>`;
+  };
+  $("intraPlans").innerHTML=plan(ce)+plan(pe);
+
+  const rules=[
+    "Trigger ka matlab: 15-minute candle ka <b>close</b> us level ke bahar &ndash; sirf touch hone par entry nahi.",
+    "Dono mein se sirf ek side lein. SL hit ho jaye to turant ulta trade (revenge trade) na karein.",
+    "9:15–9:30 ke beech entry avoid karein (opening noise); opening range 9:45 ke baad ban jaati hai.",
+    "T1 par aadha profit book karke baaki ka SL entry par laa sakte hain. Saari positions 3:15 PM tak band karein.",
+    "Ek trade mein capital ka 1–2% se zyada risk na lein."
+  ];
+  if(!live) rules.unshift("Market abhi band hai &ndash; subah gap-up/gap-down khule to levels badal sakte hain; 9:45 ke baad <b>Analyze</b> dobara chalayein.");
+  if(live && ageMin!=null && ageMin>45) rules.unshift("⚠ Data "+Math.round(ageMin)+" min purana hai (GitHub Action late chala). Live chart par levels check karein.");
+  if(expiryDay) rules.push("⚠ Aaj expiry hai: premium bahut tez upar-neeche hota hai, OTM zero ho sakti hai &ndash; size aur chhota rakhein.");
+  if(dte>7) rules.push("Intraday ke liye nearest expiry zyada liquid hoti hai; door ki expiry mein premium kam hilta hai.");
+  if(g.vix && g.vix.price>20) rules.push("India VIX "+f2(g.vix.price)+" (high): swings bade honge &ndash; size chhota, SL chaude.");
+  $("intraRules").innerHTML=rules.map(x=>"<li>"+x+"</li>").join("");
+
+  const kv=(k,v)=>`<div class="kv"><b>${k}</b>${v}</div>`;
+  $("levelsTitle").textContent="Intraday levels";
+  $("levels").innerHTML=[
+    kv("Spot (last)",f2(it.last)), kv("Session Open",f2(it.open)),
+    kv("Session High / Low",f2(it.high)+" / "+f2(it.low)),
+    kv("Pichla close",f2(it.prev_close)), kv("Gap",pct(it.gap_pct)),
+    it.or_ready&&it.or_high!=null?kv("Opening range",f2(it.or_low)+" – "+f2(it.or_high)):"",
+    kv("15-min EMA9 / EMA21",f2(it.ema9)+" / "+f2(it.ema21)), kv("15-min RSI",f2(it.rsi15)),
+    lv?kv(live?"Pivot (aaj)":"Pivot (agla session)",f2(lv.p)):"",
+    lv?kv("Resistance R1 / R2",f2(lv.r1)+" / "+f2(lv.r2)):"", lv?kv("Support S1 / S2",f2(lv.s1)+" / "+f2(lv.s2)):"",
+    kv("ATR(14) daily",f2(atr))
+  ].join("");
+}
+
+function render(){
+  if(!D) return;
+  const key=$("idx").value, exp=$("exp").value, intra=$("mode").value==="intra";
+  const r=intra?analyzeIntra(key,exp):analyze(key,exp);
+  if(!r){alert(intra?"Is index ka intraday data abhi nahi mila (data.json me 'intra' nahi hai). GitHub Action 'Update market data' ek baar chalayein.":"Is index ka data abhi available nahi hai. Thodi der baad try karein.");return;}
+  const {F,score,agree,dte}=r;
+  const bull=score>=0.12, bear=score<=-0.12, strong=Math.abs(score)>=0.3 && agree>=0.6;
+  const view=$("view");
+  view.className="badge "+(bull?"up":bear?"dn":"ne");
+  view.textContent = intra ? (bull?"INTRADAY: UP ▲":bear?"INTRADAY: DOWN ▼":"INTRADAY: RANGE ◆")
+                           : (bull?"MARKET UP ▲":bear?"MARKET DOWN ▼":"SIDEWAYS ◆");
+  $("needle").style.left=((score+1)/2*100).toFixed(1)+"%";
+  $("conf").innerHTML=`Score: <b>${score>0?"+":""}${(score*100).toFixed(0)}</b> (−100 se +100) &nbsp;|&nbsp; Parameters ka agreement: <b>${(agree*100).toFixed(0)}%</b> &nbsp;|&nbsp; ` +
+    (intra ? `Session: <b>${esc(r.it.session_date)}</b> (${r.live?"LIVE":"band"}) &nbsp;|&nbsp; Expiry mein <b>${dte}</b> din` : `Expiry mein <b>${dte}</b> din`);
+  $("cStrike").style.display=intra?"none":"block";
+  $("cIntra").style.display=intra?"block":"none";
+  if(intra) renderIntra(r,key,exp,bull,bear,strong); else renderPos(r,key,exp,bull,bear,strong);
+
+  $("factors").querySelector("tbody").innerHTML=F.map(f=>`<tr><td>${esc(f.name)}</td><td>${esc(f.val)}</td><td class="${f.score>0.1?"pos":f.score<-0.1?"neg":""}">${f.score>0?"+":""}${(f.score*100).toFixed(0)}</td><td>${f.w}</td></tr>`).join("");
+
+  const names={sp500:"S&P 500",nasdaq:"Nasdaq",dow:"Dow Jones",nikkei:"Nikkei 225",hangseng:"Hang Seng",ftse:"FTSE 100",dax:"DAX",crude:"Crude Oil",gold:"Gold",usdinr:"USD/INR",dxy:"Dollar Index",us10y:"US 10Y Yield",vix:"India VIX"};
+  $("glob").querySelector("tbody").innerHTML=Object.keys(names).filter(k=>D.global&&D.global[k]).map(k=>{
+    const q=D.global[k];return `<tr><td>${names[k]}</td><td>${f2(q.price)}</td><td class="${q.chg_pct>=0?"pos":"neg"}">${pct(q.chg_pct)}</td></tr>`;}).join("");
+
+  const nl=(arr)=>(arr||[]).slice(0,8).map(n=>{
+    const s=n.score>0?"pos":n.score<0?"neg":"";
+    const href=/^https?:\/\//.test(n.link)?n.link:"#";
+    const t=document.createElement("a");t.textContent=n.title;t.href=href;t.target="_blank";t.rel="noopener noreferrer";
+    return `<li><span class="${s}">●</span> ${t.outerHTML} <small style="color:var(--mut)">${esc(n.source)}</small></li>`;}).join("");
+  $("nIn").innerHTML=nl(D.news&&D.news.india); $("nGl").innerHTML=nl(D.news&&D.news.global);
+  $("out").style.display="block";
+}
+
+/* =====================  LONG-TERM SHARES  ===================== */
+const SECTOR_PE={"Banks":14,"NBFC & Insurance":22,"IT":25,"Energy":14,"Power":15,"FMCG":45,"Consumer":50,"Auto":24,"Pharma & Health":28,"Infra & Defence":32,"Metals":11,"Cement":30,"Telecom":30};
+const FIN=new Set(["Banks","NBFC & Insurance"]);
+
+function ltRegime(){
+  const ni=D&&D.indices&&D.indices.nifty, nf=(S&&S.nifty)||{}, vix=D&&D.global&&D.global.vix;
+  const price=(ni&&ni.price)||nf.price, sma=(ni&&ni.sma200)||nf.sma200, v=vix?vix.price:null;
+  const above=(price&&sma)?price>sma:null;
+  let reg="Neutral";
+  if(above===false || (v!=null&&v>=22)) reg="Cautious";
+  else if(above===true && (v==null||v<20)) reg="Favourable";
+  return {reg,price,sma,v,above};
+}
+
+function scoreStock(s,reg){
+  const F=[], add=(grp,name,val,score,w)=>F.push({grp,name,val,score:clamp(score),w});
+  const p=s.price, fin=FIN.has(s.sector);
+  // --- Trend / momentum
+  if(s.sma200){const x=(p/s.sma200-1)*100; add("Trend","Price vs 200-DMA",pct(x),x>35?0:x/15,8);}
+  if(s.sma50&&s.sma200){const x=(s.sma50/s.sma200-1)*100; add("Trend","50-DMA vs 200-DMA",pct(x),x/8,6);}
+  if(s.mom12_1!=null) add("Trend","12M momentum (last month chhod kar)",pct(s.mom12_1),s.mom12_1/25,8);
+  if(s.ret12m!=null&&S.nifty&&S.nifty.ret12m!=null){const d=s.ret12m-S.nifty.ret12m; add("Trend","12M return vs Nifty",pct(d),d/20,8);}
+  if(s.cagr3!=null) add("Trend","3 saal CAGR",pct(s.cagr3),(s.cagr3-10)/15,6);
+  // --- Entry timing
+  if(s.hi52){const dd=(p/s.hi52-1)*100;
+    add("Timing","52-week high se doori",pct(dd), dd>-5?0:dd>-30?0.6*(-dd-5)/25:Math.max(-0.5,0.6-(-dd-30)*0.055),6);}
+  if(s.rsi!=null) add("Timing","RSI(14) daily",s.rsi.toFixed(0),s.rsi>=75?-0.4:s.rsi<=35?0.3:0,3);
+  // --- Valuation
+  if(s.pe!=null&&s.pe>0){const fair=SECTOR_PE[s.sector]||25; add("Valuation","PE vs sector fair ("+fair+")",s.pe.toFixed(1),1-s.pe/fair,10);}
+  if(fin&&s.pb!=null&&s.pb>0) add("Valuation","Price/Book (fair ~3)",s.pb.toFixed(2),1-s.pb/3,5);
+  let upside=null;
+  if(s.target&&(s.n_an||0)>=5){upside=(s.target/p-1)*100; add("Valuation","Analyst target upside",pct(upside),upside/25,6);}
+  if(s.rec!=null&&(s.n_an||0)>=5) add("Valuation","Analyst rating (1 = Strong Buy)",s.rec.toFixed(1),(3-s.rec)/1.5,3);
+  if(s.dy!=null) add("Valuation","Dividend yield",s.dy.toFixed(2)+"%",clamp(s.dy/3,0,0.5),2);
+  // --- Quality
+  if(s.roe!=null) add("Quality","ROE",s.roe.toFixed(1)+"%",(s.roe-12)/12,8);
+  if(!fin&&s.de!=null) add("Quality","Debt/Equity",s.de.toFixed(2),1-s.de,5);
+  if(!fin&&s.pm!=null) add("Quality","Profit margin",s.pm.toFixed(1)+"%",(s.pm-8)/12,3);
+  if(s.rg!=null) add("Quality","Revenue growth (YoY)",pct(s.rg),s.rg/15,4);
+  if(s.eg!=null) add("Quality","Earnings growth (YoY)",pct(s.eg),s.eg/20,4);
+  // --- Risk
+  if(s.beta!=null) add("Risk","Beta",s.beta.toFixed(2),(1-s.beta)/0.6,3);
+  if(s.vol!=null) add("Risk","Volatility (1Y, annual)",s.vol.toFixed(0)+"%",(30-s.vol)/15,3);
+
+  const W=F.reduce((a,f)=>a+f.w,0);
+  const raw=W?F.reduce((a,f)=>a+f.score*f.w,0)/W:0;
+  const score=Math.round((raw+1)*50);
+  const cov=W/(fin?93:96);
+  const fundW=F.filter(f=>f.grp==="Valuation"||f.grp==="Quality").reduce((a,f)=>a+f.w,0);
+  const fundCov=fundW/(fin?42:45);
+  const limited = fundCov<0.4;
+  const thr = reg==="Cautious"?65:60;
+  // guard rules: score alone must not turn an expensive / overheated / broken share into "Accumulate"
+  const caps=[], fairPE=SECTOR_PE[s.sector]||25;
+  const x200=s.sma200?(p/s.sma200-1)*100:null;
+  if(s.pe!=null&&s.pe>2*fairPE) caps.push({short:"mehenga",msg:`Valuation bahut mehengi hai (PE ${s.pe.toFixed(0)} vs sector ~${fairPE}) &ndash; girawat / dip ka wait karein.`});
+  if((x200!=null&&x200>35)||(s.rsi!=null&&s.rsi>=78)) caps.push({short:"overheated",msg:"Share bahut tez chadha hua hai (200-DMA se 35%+ upar ya RSI 78+) &ndash; chase na karein."});
+  if(x200!=null&&x200<-15) caps.push({short:"trend kamzor",msg:"Share 200-DMA se 15%+ neeche hai (trend toota hua) &ndash; girte chaaku ko na pakdein, stabilize hone ka wait karein."});
+  let verdict = score>=thr ? "ACC" : score>=48 ? "HOLD" : "AVOID";
+  let capNote=null, capMsgs=[];
+  if(verdict==="ACC" && limited) verdict="HOLD";
+  else if(verdict==="ACC" && caps.length){
+    // good company but expensive AND overheated -> profit-booking zone for holders; otherwise just "hold, don't add"
+    verdict=(caps.some(c=>c.short==="mehenga")&&caps.some(c=>c.short==="overheated"))?"TRIM":"HOLD";
+    capNote=caps[0].short; capMsgs=caps.map(c=>c.msg);}
+  // weak score + broken trend (below 200-DMA by 10%+, 50-DMA under 200-DMA) -> exit zone for holders
+  if(verdict==="AVOID" && score<35 && x200!=null && x200<-10 && s.sma50 && s.sma200 && s.sma50<s.sma200) verdict="SELL";
+  const sorted=F.map(f=>Object.assign({c:f.score*f.w},f)).sort((a,b)=>b.c-a.c);
+  return {score,verdict,cov,fundCov,limited,F,upside,capNote,capMsgs,
+          pos:sorted.filter(f=>f.c>0.5).slice(0,3), neg:sorted.filter(f=>f.c<-0.5).reverse().slice(0,3), thr};
+}
+
+const VLBL={ACC:["BUY (Accumulate)","up"],HOLD:["HOLD","ne"],TRIM:["PROFIT BOOK","ne"],AVOID:["AVOID (naya na lein)","dn"],SELL:["SELL / EXIT","dn"]};
+
+function ltTips(s,sc,reg){
+  const t=[];
+  if(sc.verdict==="ACC"){
+    t.push("<b>Kaise kharidein:</b> 2–3 kiston mein &ndash; jaise 40% abhi, 30% 4–6 hafte baad, 30% kisi 5–8% girawat par.");
+    t.push("Ek share mein portfolio ka 5–8% se zyada nahi; ek sector mein 25% se zyada nahi.");
+    if(s.sma200) t.push(`<b>Review level:</b> weekly close 200-DMA (₹${f2(s.sma200)}) se 10% neeche (~₹${f2(s.sma200*0.9)}) ya quarterly results mein earnings girne par position dobara dekhein.`);
+  } else if(sc.verdict==="HOLD"){
+    t.push("Pehle se hai to hold; <b>naya paisa abhi nahi</b> ya bahut chhoti matra mein.");
+    if(s.hi52) t.push(`Behtar entry zone: 52w high se ~15% neeche (~₹${f2(s.hi52*0.85)})${s.sma200?" ya 200-DMA (₹"+f2(s.sma200)+") ke paas":""}, bashart fundamentals na bigdein.`);
+  } else if(sc.verdict==="TRIM"){
+    t.push("<b>Agar aapke paas hai:</b> company achhi hai par share mehenga aur bahut tez chadha hua hai &ndash; 25–30% profit book karna sensible hai, baaki trailing stop-loss ke saath rakhein.");
+    if(s.sma50) t.push(`Trailing SL idea: 50-DMA (₹${f2(s.sma50)}) ke neeche weekly close hone par aur hissa bechein.`);
+    t.push("Naya paisa abhi na lagayein; dip ya valuation theek hone ka wait karein.");
+  } else if(sc.verdict==="SELL"){
+    t.push("<b>Agar aapke paas hai:</b> trend toota hua hai (price 200-DMA se 10%+ neeche, 50-DMA bhi 200-DMA ke neeche) aur score kamzor hai &ndash; exit ya bada hissa kam karne par vichar karein.");
+    if(s.sma200) t.push(`Dobara dekhne ka level: weekly close 200-DMA (₹${f2(s.sma200)}) ke upar wapas aaye aur results sudhrein.`);
+    t.push("Naya paisa bilkul nahi. Bechne se pehle apna buy price, holding period aur tax asar dekh lein.");
+  } else {
+    t.push("Abhi naya entry nahi. Trend (200-DMA ke upar wapas) aur fundamentals sudharne ka wait karein.");
+    t.push("Pehle se hai to quarterly results aur 200-DMA ke levels par review karein; trend aur bigde to SELL zone me aa sakta hai.");
+  }
+  sc.capMsgs.forEach(m=>t.push("⚠ Score accha hai par ACCUMULATE nahi diya: "+m));
+  if(sc.limited) t.push("⚠ Is share ke fundamentals (PE, ROE, debt) data mein nahi mile &ndash; score sirf price/trend par based hai, isliye ACCUMULATE nahi diya gaya.");
+  if(reg==="Cautious") t.push("⚠ Market regime <b>Cautious</b> hai (Nifty 200-DMA ke neeche ya VIX high) &ndash; ACCUMULATE ke liye score ki limit 65 rakhi gayi hai.");
+  if(sc.upside!=null) t.push(`Analyst average target ~₹${f2(s.target)} (${pct(sc.upside)}) &ndash; sirf ek reference, guarantee nahi.`);
+  return t;
+}
+
+let ltOpen=new Set();
+function ltFill(){
+  const secs=[...new Set(((S&&S.stocks)||[]).map(x=>x.sector))].sort();
+  const cur=$("fSec").value;
+  $("fSec").innerHTML='<option value="">Sab sector</option>'+secs.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
+  if(secs.includes(cur)) $("fSec").value=cur;
+}
+function renderLT(){
+  if(!S){
+    $("regime").innerHTML="<b>stocks.json abhi nahi mila.</b><br><span style='color:var(--mut);font-size:13px'>GitHub repo me Actions → <b>Update stock data</b> → Run workflow chalayein (README dekhein), phir yeh page refresh karein.</span>";
+    $("ltTable").querySelector("tbody").innerHTML=""; $("ltInfo").textContent=""; return;
+  }
+  const R=ltRegime();
+  const rc=R.reg==="Favourable"?"up":R.reg==="Cautious"?"dn":"ne";
+  $("regime").innerHTML=`<div class="sig"><div class="badge ${rc}" style="font-size:18px">Market regime: ${R.reg}</div>
+    <div style="flex:1;min-width:220px;font-size:13px">Nifty ${f2(R.price)} ${R.sma?(R.above?"<span class='pos'>200-DMA ("+f2(R.sma)+") ke upar</span>":"<span class='neg'>200-DMA ("+f2(R.sma)+") ke neeche</span>"):""} · India VIX ${f2(R.v)}<br>
+    <span style="color:var(--mut)">Favourable: dheere-dheere kharidna theek. Cautious: sirf bahut strong score par, aur kiston mein.</span></div></div>`;
+
+  let rows=(S.stocks||[]).map(s=>({s,sc:scoreStock(s,R.reg)}));
+  const sec=$("fSec").value, ver=$("fVer").value, q=$("fQ").value.trim().toLowerCase(), so=$("fSort").value;
+  if(sec) rows=rows.filter(x=>x.s.sector===sec);
+  if(ver) rows=rows.filter(x=>x.sc.verdict===ver);
+  if(q) rows=rows.filter(x=>(x.s.name+" "+x.s.sym).toLowerCase().includes(q));
+  const nv=(v,d)=>v==null?d:v;
+  rows.sort((a,b)=> so==="ret12m" ? nv(b.s.ret12m,-1e9)-nv(a.s.ret12m,-1e9)
+                  : so==="upside" ? nv(b.sc.upside,-1e9)-nv(a.sc.upside,-1e9)
+                  : so==="pe" ? nv(a.s.pe>0?a.s.pe:null,1e9)-nv(b.s.pe>0?b.s.pe:null,1e9)
+                  : b.sc.score-a.sc.score);
+
+  const upd=S.updated?new Date(S.updated).toLocaleString("en-IN",{timeZone:"Asia/Kolkata"})+" IST":"–";
+  $("ltInfo").innerHTML=`Stock data updated: ${upd} · ${rows.length} share dikh rahe hain · Fundamentals ${S.fund_ok}/${S.total} shares ke liye mile`+
+    (S.fund_ok<S.total/2?" <span style='color:var(--ne)'>(kam &ndash; baaki ka score sirf price/trend par based)</span>":"")+
+    (S.errors&&S.errors.length?` · ${S.errors.length} fetch error`:"");
+
+  const bar=(sc)=>{const col=sc>=60?"var(--up)":sc>=48?"var(--ne)":"var(--dn)";
+    return `<b>${sc}</b><div class="bar"><i style="width:${sc}%;background:${col}"></i></div>`;};
+  const cls=v=>v==null?"":v>=0?"pos":"neg";
+  let html="";
+  rows.forEach(({s,sc})=>{
+    const vl=VLBL[sc.verdict], dd=s.hi52?(s.price/s.hi52-1)*100:null, open=ltOpen.has(s.sym);
+    html+=`<tr class="r" data-sym="${esc(s.sym)}"><td><b>${esc(s.name)}</b><br><small style="color:var(--mut)">${esc(s.sym.replace(".NS",""))}${s.stale?" · purana data":""}</small></td>
+      <td>${esc(s.sector)}</td><td>₹${f2(s.price)}</td><td>${bar(sc.score)}</td>
+      <td><span class="pill ${vl[1]}">${vl[0]}</span>${sc.limited?"<br><small style='color:var(--mut)'>data kam</small>":sc.capNote?"<br><small style='color:var(--mut)'>"+esc(sc.capNote)+"</small>":""}</td>
+      <td class="${cls(s.ret12m)}">${s.ret12m==null?"–":pct(s.ret12m)}</td><td>${s.pe>0?s.pe.toFixed(1):"–"}</td>
+      <td>${s.roe==null?"–":s.roe.toFixed(1)+"%"}</td><td class="${cls(dd)}">${dd==null?"–":pct(dd)}</td>
+      <td class="${cls(sc.upside)}">${sc.upside==null?"–":pct(sc.upside)}</td></tr>`;
+    if(open){
+      const li=(arr,sign)=>arr.length?arr.map(f=>`<li class="${sign>0?"pos":"neg"}">${sign>0?"+":"−"} ${esc(f.name)}: ${esc(f.val)}</li>`).join(""):"<li style='color:var(--mut)'>koi bada factor nahi</li>";
+      html+=`<tr class="det"><td colspan="10">
+        <div class="two"><div><b>Kyun accha lag raha hai</b><ul>${li(sc.pos,1)}</ul></div><div><b>Kya khatka hai</b><ul>${li(sc.neg,-1)}</ul></div></div>
+        <div style="margin-top:10px"><b>Tips</b><ul>${ltTips(s,sc,R.reg).map(x=>"<li>"+x+"</li>").join("")}</ul></div>
+        <div class="grid" style="margin-top:10px">
+          <div class="kv"><b>200-DMA / 50-DMA</b>${f2(s.sma200)} / ${f2(s.sma50)}</div>
+          <div class="kv"><b>52w High / Low</b>${f2(s.hi52)} / ${f2(s.lo52)}</div>
+          <div class="kv"><b>Return 1M / 3M / 6M</b>${pct(s.ret1m)} / ${pct(s.ret3m)} / ${pct(s.ret6m)}</div>
+          <div class="kv"><b>CAGR 3Y / 5Y</b>${pct(s.cagr3)} / ${pct(s.cagr5)}</div>
+          <div class="kv"><b>Data coverage</b>${(sc.cov*100).toFixed(0)}% (fundamentals ${(sc.fundCov*100).toFixed(0)}%)</div></div>
+        <table style="margin-top:10px"><thead><tr><th>Group</th><th>Parameter</th><th>Value</th><th>Score</th><th>Weight</th></tr></thead><tbody>
+        ${sc.F.map(f=>`<tr><td>${f.grp}</td><td>${esc(f.name)}</td><td>${esc(f.val)}</td><td class="${f.score>0.1?"pos":f.score<-0.1?"neg":""}">${f.score>0?"+":""}${(f.score*100).toFixed(0)}</td><td>${f.w}</td></tr>`).join("")}
+        </tbody></table>
+        <div class="sub" style="margin-top:8px">Verdict rule: score ≥ ${sc.thr} → BUY (par mehenga/overheated/toota trend ho to Hold ya Profit book), 48–${sc.thr-1} → Hold, 35–47 → Avoid, 35 se kam + toota trend → Sell. Yeh rule judgment par bana hai, backtest nahi hua.</div></td></tr>`;
+    }
+  });
+  $("ltTable").querySelector("tbody").innerHTML=html||"<tr><td colspan='10' style='color:var(--mut)'>Koi share match nahi hua.</td></tr>";
+}
+
+/* =====================  LOAD + EVENTS  ===================== */
+async function load(){
+  try{
+    const r=await fetch("data.json?t="+Date.now());
+    D=await r.json();
+    const u=D.updated?new Date(D.updated):null;
+    let txt = u ? "Index data updated: "+u.toLocaleString("en-IN",{timeZone:"Asia/Kolkata"})+" IST" : "";
+    if(D.errors&&D.errors.length) txt+=" · "+D.errors.length+" source(s) fail hue (purana data use ho sakta hai)";
+    $("updated").textContent=txt||"data ready";
+  }catch(e){
+    $("updated").textContent="data.json load nahi hua – GitHub Action ek baar chalayein (README dekhein).";
+  }
+  try{
+    const r=await fetch("stocks.json?t="+Date.now());
+    if(r.ok){S=await r.json(); ltFill();}
+  }catch(e){}
+  if($("tab-lt").style.display!=="none") renderLT();
+}
+function showTab(t){
+  $("tab-fno").style.display=t==="fno"?"block":"none";
+  $("tab-lt").style.display=t==="lt"?"block":"none";
+  $("tabB-fno").classList.toggle("on",t==="fno");
+  $("tabB-lt").classList.toggle("on",t==="lt");
+  if(t==="lt") renderLT();
+}
+$("idx").addEventListener("change",()=>{fillExp();});
+$("go").addEventListener("click",render);
+$("tabB-fno").addEventListener("click",()=>showTab("fno"));
+$("tabB-lt").addEventListener("click",()=>showTab("lt"));
+["fSec","fVer","fSort"].forEach(id=>$(id).addEventListener("change",renderLT));
+$("fQ").addEventListener("input",renderLT);
+$("ltTable").addEventListener("click",e=>{
+  const tr=e.target.closest&&e.target.closest("tr.r"); if(!tr) return;
+  const sym=tr.getAttribute("data-sym");
+  if(ltOpen.has(sym)) ltOpen.delete(sym); else ltOpen.add(sym);
+  renderLT();
+});
+fillExp(); load();
+</script>
+</body>
+</html>
