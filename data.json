@@ -181,24 +181,24 @@
    "chg_pct": -1.142
   },
   "ftse": {
-   "price": 10623.54,
+   "price": 10621.1201,
    "prev": 10426.9004,
-   "chg_pct": 1.886
+   "chg_pct": 1.863
   },
   "dax": {
-   "price": 25258.6797,
+   "price": 25251.7891,
    "prev": 24702.1309,
-   "chg_pct": 2.253
+   "chg_pct": 2.225
   },
   "crude": {
-   "price": 85.15,
+   "price": 85.05,
    "prev": 83.68,
-   "chg_pct": 1.757
+   "chg_pct": 1.637
   },
   "gold": {
-   "price": 3601.0,
+   "price": 3599.0,
    "prev": 3535.8,
-   "chg_pct": 1.844
+   "chg_pct": 1.787
   },
   "usdinr": {
    "price": 92.435,
@@ -206,9 +206,9 @@
    "chg_pct": -0.4
   },
   "dxy": {
-   "price": 103.761,
+   "price": 103.757,
    "prev": 103.67,
-   "chg_pct": 0.088
+   "chg_pct": 0.084
   },
   "us10y": {
    "price": 4.848,
@@ -230,11 +230,11 @@
  "news": {
   "india": [
    {
-    "title": "Nifty 24050 PE 01 DEC 2026: Option Premium, OI & Price - Kotak Neo",
-    "source": "Kotak Neo",
-    "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNa29SSEVkbURLOXRlRTBaWHR1QmxnZzRkVmNKMi1SQ1RXdnZockZlWERGWUlGLUJCMmNJVndnRjcta0QxOGp1R1BUR2NFc2FESjAxeHRnQVdVTEpoa3A0LTQxSmhMWUlpTzFERHUzZTNaVmxCTUNGek5STGtPZ2lsUXBycw?oc=5",
-    "date": "Thu, 26 Nov 2026 11:07:25 GMT",
-    "score": 0.0
+    "title": "Sensex Gains 390 Points, Nifty Closes Above 25,880 - HDFC Sky",
+    "source": "HDFC Sky",
+    "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQU0FUTHh4SkhqcFNIZDR4YWlkdm96Q21GX0VSXzk1S1J5SEVUdTlYUE1tV2FjRERHTjF2YmFpdlZpVVgtNDdhbzBzQkhZbWVaQlVYVUxtMEd6cEh1dnhnUVpMZ1AwVGMzRHFWVG12TTMtbEUwWHJkM0IzXzRlTUJfRTFCc1Q2RzRIZ0ZrNXJIYXBITm45bUFERE9HcjZpMGYxOWdBblFYR1hiQXlWZlZRNW83NzlJa1h5b0NRQjV5MWRjdmQxNHZPVWMzbU5odXp6emFGVk1Ia2ZNRVpOZGc?oc=5",
+    "date": "Thu, 26 Nov 2026 11:16:56 GMT",
+    "score": 1.0
    },
    {
     "title": "Top Stories: Sensex nears 10-month high, Tata Trusts take Chandra to court, SC redraws food labels - LinkedIn",
@@ -244,11 +244,11 @@
     "score": 0.0
    },
    {
-    "title": "Gift Nifty Signals Higher Open for Sensex, Nifty on Thursday as Asia Rebounds; US Inflation Runs Hot - HDFC Sky",
-    "source": "HDFC Sky",
-    "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNYWlxZXJqalhYb043ZWNqeG5PQWFMb3QyYmE2U1R1S0ZlSmZyV252WGhyd2NwR3JhU3hEWGdaWHNJOHdldVFsdkxxOFd0cXdjQ3BxdTc1Y1IzcjdLbTMzdmpQeEFyTXRsLXAzZ180YjdyZjFFSHI4TURjdmtOaUJMTGxVOUc3eDEtb016aGMxcjdEX2xEU2Y4TDRXMW84N3RFaEhJcTJ6bDNZRU0xMUxvS1doTWxWeUlqVFhVUUQxM3NTMnZHR0J3dnRzaHFfOW91U3ZSX1plQQ?oc=5",
-    "date": "Thu, 26 Nov 2026 03:20:34 GMT",
-    "score": 0.33
+    "title": "Closing Bell, 26 November 2026: Sensex and Nifty Manage to End Higher After Giving Up Early Gains - Kotak Neo",
+    "source": "Kotak Neo",
+    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQUTNNQzRFNzZjQTZvZWdnMFo3MjZieUJSbVFKRzhSTERlQ1FRUWpzWlVjTDZZS2ZYbUtyeDVUNU0zTGdUZGl5RExVM25kanZPLU9XM3JsQWRlRDZIc2hIVm91ZkNFWHlsQWUybE1PTnMxbGY3eEJvRzJIbnNmNlhRS3VpYktRNkE0YThtWTNya0xJcjZQT0tWakVHZTE3UUFCaE94M2t2eHpZUzQ5cXc?oc=5",
+    "date": "Thu, 26 Nov 2026 10:49:05 GMT",
+    "score": 1.0
    },
    {
     "title": "Sensex gains for second day in a row on foreign fund inflows, IT stocks - The New Indian Express",
@@ -265,6 +265,13 @@
     "score": 1.0
    },
    {
+    "title": "Nippon India Mutual Fund suspends fresh subscriptions in its multiple IDCW plans - Value Research",
+    "source": "Value Research",
+    "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPcndzMFdpNXJQakZCcEFYSndBUnVHaU5EYTVrVEx2SDhWamg4R09JOG1CS1JnSHlnamQwZmk2d1FKYWc0QTd6Zi1nekJDbEJncmJoNzlseV94ZWFvYk5wazVKRkl3MFJmWURyeEVyN09DNi1LQUtaVVhVRUltdlRwWkFpMUdBdmFWRGZGTkc4ckZLMFd6ZjlfY2NxQ0FIdF9GZUNaTUFJZGdnUW5XcDVwaEJISlIzLUdQZEdiclVjWUgyZDl2SjFLS2YzVENjYVhC?oc=5",
+    "date": "Thu, 26 Nov 2026 11:05:20 GMT",
+    "score": 0.0
+   },
+   {
     "title": "Wipro, TCS, Infosys push Nifty IT to 33,000 mark - India Infoline",
     "source": "India Infoline",
     "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPQVd1aHZ2UUZNbThlVGo3Sy1EcnFJeEtuMWkweTVScHRWTkxYQ0hkSjRGa0VGbTNhUndaZzZlTFpOOFlmU2pCbnhybXJHRTl4ZzRNemRnWVk1ZjBrclZINGRNOGNHVFVzbDByZ3gzMlk0aDFKdHhnQktoNlc0UVhKM1dpNmlPb0lDdEpnYlE1ZE5vVFhw?oc=5",
@@ -279,11 +286,11 @@
     "score": 1.0
    },
    {
-    "title": "Nifty 23400 PE 01 DEC 2026: Option Premium, OI & Price - Kotak Neo",
-    "source": "Kotak Neo",
-    "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQaHByZ0cwVHFrVDZ0UmU0WGEtQTh1dkhXUWEySlAyM3Z0R3kxRVBqYW1QTFdjQU40Njk1MzNUVDd2d21VR0VuSnRPT01Hc3VQT01wSnROWV9PVXJ6QjROMmdfRnF6TUdqc0FUUXdOM0c0OWpRRUk1bEc3YU03WURTY3M1VQ?oc=5",
-    "date": "Thu, 26 Nov 2026 02:51:20 GMT",
-    "score": 0.0
+    "title": "Gift Nifty Signals Higher Open for Sensex, Nifty on Thursday as Asia Rebounds; US Inflation Runs Hot - HDFC Sky",
+    "source": "HDFC Sky",
+    "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNYWlxZXJqalhYb043ZWNqeG5PQWFMb3QyYmE2U1R1S0ZlSmZyV252WGhyd2NwR3JhU3hEWGdaWHNJOHdldVFsdkxxOFd0cXdjQ3BxdTc1Y1IzcjdLbTMzdmpQeEFyTXRsLXAzZ180YjdyZjFFSHI4TURjdmtOaUJMTGxVOUc3eDEtb016aGMxcjdEX2xEU2Y4TDRXMW84N3RFaEhJcTJ6bDNZRU0xMUxvS1doTWxWeUlqVFhVUUQxM3NTMnZHR0J3dnRzaHFfOW91U3ZSX1plQQ?oc=5",
+    "date": "Thu, 26 Nov 2026 03:20:34 GMT",
+    "score": 0.33
    },
    {
     "title": "Sensex, Nifty end near 10-month highs: 5 reasons why stock market closed higher today - CNBC TV18 - LinkedIn",
@@ -293,28 +300,21 @@
     "score": 1.0
    },
    {
-    "title": "Gift Nifty Today: Sensex, Nifty Eye Positive Opening - HDFC Sky",
-    "source": "HDFC Sky",
-    "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPLV9YZWtjRV9iMThSbHpDdV9WcGlJZ1ItSDQ1M18wRXZuMHBsWnRRRDlmYkdjNVVLaXRYckxvazRMM3N1MnE2M0VUcU1RQTlHSEhEUXVjcUFpSmIwZE1CV0Zjd1JGeWNBQkFReEx0dE9abHg4Z3B2b0h6MEZfUV9BSlM5ZGViM1VoT1E?oc=5",
-    "date": "Thu, 26 Nov 2026 11:23:12 GMT",
-    "score": 1.0
+    "title": "Stock Market Update 26 November 2026: Sensex Drops Over 150 Points; Nifty 50 Below 25,750 in Early Trade - Kotak Neo",
+    "source": "Kotak Neo",
+    "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQazZmZzFJeFNOOWhnM2pZUjlZM096TENxc05IbkVZdC1HNmJ5MUpnVHdjQUMwMlFiWkhiclVLaHJVTVRoTkFSUUFsM1o0NlFNNm81VHY5Yl9QVE1jQ2NHdVZMd3B1MUtqV2EyNFpSVXA4czh5b0RUTllseEZGS2FNbTcxZjBiaWJHckVxNF8tbmktOUNhb3RZ?oc=5",
+    "date": "Thu, 26 Nov 2026 04:13:52 GMT",
+    "score": -1.0
    },
    {
-    "title": "Sensex Soars Close to 400 Pts, Nifty Nears 26,600: 3 Reasons Why the Stock Market Is Up Today - Kotak Neo",
-    "source": "Kotak Neo",
-    "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPSFhuSkJiQ1p6aHRjNlNGeERnd1dVTlB1S1V3YTE1aDFLdjl0VHBSVkRneGdaVzUtVjZzSzRIVVB0OXhsVlFhbDY5dW54cTdjRTk2SlhJbUhYcDZtcDFobzNXZGl1S3FUMlFzZ2RmRmZKZjNhajRrUkdIV0ViNnI0Nw?oc=5",
-    "date": "Thu, 26 Nov 2026 07:18:34 GMT",
-    "score": 1.0
-   },
-   {
-    "title": "Closing Bell, 26 November 2026: Sensex and Nifty Manage to End Higher After Giving Up Early Gains - Kotak Neo",
-    "source": "Kotak Neo",
-    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQUTNNQzRFNzZjQTZvZWdnMFo3MjZieUJSbVFKRzhSTERlQ1FRUWpzWlVjTDZZS2ZYbUtyeDVUNU0zTGdUZGl5RExVM25kanZPLU9XM3JsQWRlRDZIc2hIVm91ZkNFWHlsQWUybE1PTnMxbGY3eEJvRzJIbnNmNlhRS3VpYktRNkE0YThtWTNya0xJcjZQT0tWakVHZTE3UUFCaE94M2t2eHpZUzQ5cXc?oc=5",
-    "date": "Thu, 26 Nov 2026 10:49:05 GMT",
-    "score": 1.0
+    "title": "Nifty at 26-week high, Sensex up 0.47%; HDFC Bank, IT stocks lead; FMCG lags - BusinessLine",
+    "source": "BusinessLine",
+    "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQY1NUMnU4c0hqLVlDODFlbUd3MkdqaEZKN04yLS1rMUVwNWZlLTlFTFkxSTQzRDNxMERGTmxMUVJiZlQxLW5qdGUxcldBcGYwTnhWMkhSZEV2dlpYY2h0cTY5Qk15TGRzaS13eGV1czQzS1hLTF94R24wYjJDNkRwTGJndmRYR0RoUlhwMHRyWkdxZDRLYjIyZkliUE4zVXNJVmppamhZLUt3WUdvMTFhS0w1ZlJfOTE1bDZxSERPNmpSb1ZqaWlPTTZtSGpQeWdn0gHXAUFVX3lxTE5RbnNXWjNKQWFUZ2hrMm9FVWtlUGdqREQ4SUQ3THN5QlUwdnJQVmQ2UGpHVlNzNDdjcHF6TXUzampBNWwxR0R4QjI4YjluTnBhVW9QUUc2U0V4SWd1Y1RTZ0hNRzBSYlh3YmxPWklRaksyd2tNZUR1dkZPUW44Nm4tcWFhWHlhME9iV1VPZ2pvb05LZmJ5azNVQVY0OVY2WEFEYmtmUFk3M2gyU3Q2azgzNGMwWHdNSHdrUmo2VDRTREx5dFIwcXdpNHZpT09aOU5SaTBkRjZn?oc=5",
+    "date": "Thu, 26 Nov 2026 07:37:18 GMT",
+    "score": 0.0
    }
   ],
-  "india_score": 0.611,
+  "india_score": 0.444,
   "global": [
    {
     "title": "Asian markets end in positive zone, European indices trading up - News On AIR",
@@ -403,7 +403,7 @@
   ],
   "global_score": 0.028
  },
- "updated": "2026-11-26T16:34:40+00:00",
+ "updated": "2026-11-26T16:36:49+00:00",
  "errors": [
   "option chain nifty: HTTP Error 404: Not Found",
   "option chain banknifty: HTTP Error 404: Not Found"
