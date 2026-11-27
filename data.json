@@ -1,15 +1,15 @@
 {
  "indices": {
   "nifty": {
-   "price": 25824.0,
+   "price": 25682.1,
    "prev": 25884.5,
-   "chg_pct": -0.234,
-   "rsi": 70.79,
-   "ema20": 24954.48,
-   "ema50": 24213.59,
-   "sma200": 24004.4,
-   "macd_hist": 47.808,
-   "atr": 338.98,
+   "chg_pct": -0.782,
+   "rsi": 67.57,
+   "ema20": 24940.97,
+   "ema50": 24208.03,
+   "sma200": 24003.69,
+   "macd_hist": 38.752,
+   "atr": 348.23,
    "pivot": 25864.32,
    "r1": 25995.13,
    "r2": 26105.77,
@@ -19,22 +19,22 @@
    "lo20": 22656.75,
    "intra": {
     "session_date": "2026-11-27",
-    "bars": 6,
-    "last_bar": "10:27",
+    "bars": 10,
+    "last_bar": "11:28",
     "open": 25839.25,
     "high": 25909.1,
-    "low": 25803.6,
-    "last": 25824.0,
-    "ema9": 25843.02,
-    "ema21": 25849.72,
-    "rsi15": 47.24,
+    "low": 25674.25,
+    "last": 25682.2,
+    "ema9": 25757.51,
+    "ema21": 25801.78,
+    "rsi15": 34.99,
     "or_ready": true,
     "lv_next": {
-     "p": 25845.57,
-     "r1": 25887.53,
-     "s1": 25782.03,
-     "r2": 25951.07,
-     "s2": 25740.07
+     "p": 25755.18,
+     "r1": 25836.12,
+     "s1": 25601.27,
+     "r2": 25990.03,
+     "s2": 25520.33
     },
     "or_high": 25909.1,
     "or_low": 25803.6,
@@ -52,15 +52,15 @@
    }
   },
   "banknifty": {
-   "price": 63695.35,
+   "price": 63240.55,
    "prev": 63535.3,
-   "chg_pct": 0.252,
-   "rsi": 70.32,
-   "ema20": 60826.82,
-   "ema50": 58542.81,
-   "sma200": 56827.15,
-   "macd_hist": 268.65,
-   "atr": 1062.07,
+   "chg_pct": -0.464,
+   "rsi": 67.77,
+   "ema20": 60783.5,
+   "ema50": 58524.97,
+   "sma200": 56824.88,
+   "macd_hist": 239.626,
+   "atr": 1070.47,
    "pivot": 63657.45,
    "r1": 63982.6,
    "r2": 64429.9,
@@ -70,22 +70,22 @@
    "lo20": 54047.9,
    "intra": {
     "session_date": "2026-11-27",
-    "bars": 6,
-    "last_bar": "10:27",
+    "bars": 10,
+    "last_bar": "11:28",
     "open": 63339.85,
     "high": 63931.0,
-    "low": 63339.85,
-    "last": 63695.35,
-    "ema9": 63691.1,
-    "ema21": 63692.33,
-    "rsi15": 50.1,
+    "low": 63207.75,
+    "last": 63240.55,
+    "ema9": 63446.37,
+    "ema21": 63560.27,
+    "rsi15": 37.21,
     "or_ready": true,
     "lv_next": {
-     "p": 63655.4,
-     "r1": 63970.95,
-     "s1": 63379.8,
-     "r2": 64246.55,
-     "s2": 63064.25
+     "p": 63459.77,
+     "r1": 63711.78,
+     "s1": 62988.53,
+     "r2": 64183.02,
+     "s2": 62736.52
     },
     "or_high": 63881.25,
     "or_low": 63339.85,
@@ -103,15 +103,15 @@
    }
   },
   "sensex": {
-   "price": 84113.98,
+   "price": 83822.82,
    "prev": 84328.59,
-   "chg_pct": -0.255,
-   "rsi": 72.57,
-   "ema20": 80972.16,
-   "ema50": 78215.95,
-   "sma200": 77107.39,
-   "macd_hist": 168.683,
-   "atr": 1130.77,
+   "chg_pct": -0.6,
+   "rsi": 70.49,
+   "ema20": 80944.43,
+   "ema50": 78204.53,
+   "sma200": 77105.93,
+   "macd_hist": 150.102,
+   "atr": 1148.92,
    "pivot": 84211.66,
    "r1": 84668.67,
    "r2": 85008.75,
@@ -121,22 +121,22 @@
    "lo20": 73181.9,
    "intra": {
     "session_date": "2026-11-27",
-    "bars": 5,
-    "last_bar": "10:12",
+    "bars": 9,
+    "last_bar": "11:13",
     "open": 84093.24,
     "high": 84284.34,
-    "low": 83944.6,
-    "last": 84115.69,
-    "ema9": 84136.34,
-    "ema21": 84143.33,
-    "rsi15": 49.63,
+    "low": 83678.83,
+    "last": 83822.82,
+    "ema9": 83940.87,
+    "ema21": 84034.64,
+    "rsi15": 42.32,
     "or_ready": true,
     "lv_next": {
-     "p": 84114.88,
-     "r1": 84285.15,
-     "s1": 83945.41,
-     "r2": 84454.62,
-     "s2": 83775.14
+     "p": 83928.66,
+     "r1": 84178.5,
+     "s1": 83572.98,
+     "r2": 84534.18,
+     "s2": 83323.15
     },
     "or_high": 84284.34,
     "or_low": 83944.6,
@@ -171,14 +171,14 @@
    "chg_pct": 0.328
   },
   "nikkei": {
-   "price": 58570.8086,
+   "price": 58732.5195,
    "prev": 57499.1602,
-   "chg_pct": 1.864
+   "chg_pct": 2.145
   },
   "hangseng": {
-   "price": 22416.4395,
+   "price": 22754.6602,
    "prev": 22226.8809,
-   "chg_pct": 0.853
+   "chg_pct": 2.375
   },
   "ftse": {
    "price": 10609.2998,
@@ -191,24 +191,24 @@
    "chg_pct": 2.078
   },
   "crude": {
-   "price": 85.76,
+   "price": 86.21,
    "prev": 83.68,
-   "chg_pct": 2.486
+   "chg_pct": 3.023
   },
   "gold": {
-   "price": 3664.0,
+   "price": 3675.5,
    "prev": 3535.8,
-   "chg_pct": 3.626
+   "chg_pct": 3.951
   },
   "usdinr": {
-   "price": 92.79,
+   "price": 92.89,
    "prev": 92.2376,
-   "chg_pct": 0.599
+   "chg_pct": 0.707
   },
   "dxy": {
-   "price": 103.76,
+   "price": 103.665,
    "prev": 103.67,
-   "chg_pct": 0.087
+   "chg_pct": -0.005
   },
   "us10y": {
    "price": 4.848,
@@ -216,9 +216,9 @@
    "chg_pct": -1.142
   },
   "vix": {
-   "price": 16.4725,
+   "price": 16.7925,
    "prev": 16.84,
-   "chg_pct": -2.182
+   "chg_pct": -0.282
   }
  },
  "oi": {},
@@ -230,17 +230,17 @@
  "news": {
   "india": [
    {
-    "title": "Gift Nifty Signals Flat Open for Sensex, Nifty on Friday on Back of Weak Global Cues - HDFC Sky",
+    "title": "Sensex, Nifty Trade Lower as IT Drags; Metals Outperform - HDFC Sky",
     "source": "HDFC Sky",
-    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQa2NVRGJNZHhDZnJXN0RLeDRkSlZOdWo3VkN1cXpWTl9nS0FrcGQ1QXUzd0tpeFZqRUNPZTFkQzBFb1hlSURWbVZtOVlRT2lSd1RJbkZBblJ4ZGF1dTI4RkhnczZaWXZOOXRVMllzWHFHUHFTS2ZjbTB3Y1loZmUzdld1cWkxT2xfR0wwZUZLZEdzZjQxR2FhLU9KeVllVHJsS293UU1adWswODJhdnpLQ2gyT1Z0ZWJ1QWJzbXE2OE55bzQ?oc=5",
-    "date": "Fri, 27 Nov 2026 03:28:32 GMT",
-    "score": -1.0
+    "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNeUxkbUJBd1IxTVF0bG1ja3F5SEY1T0Z4Rm5tOGZlNGh4dFpRRlZ4LXVxekE1YTZqOFBwWHp5ZWtMelNlWlllYlVGSkpab2VZa3N4Ry0tWFB4aFVFdy1iWGFNUUcxaDVDT2duUU01NHEzZWItZjN4Tmh1MkJzWmZYSk5UVUVKSDNoOWFzQXNJN0hsdl9xMW5nbkNSU1BkY0EtcXlYTENuRFZTbjlHbHdncmt1SjJTX0tyUDYxU0dxbG5DVHlHU1o2WFNLV0VOU2FrNzNlME9jb0RjcE9lMUFSdDM4dFZYeEM5MXV4amJRZktpS1VoQ0tJSnlkbUdJZ1VLOEE?oc=5",
+    "date": "Fri, 27 Nov 2026 04:49:39 GMT",
+    "score": 0.0
    },
    {
     "title": "Nifty’s Sharp November Rally Gives India’s IPO Hopefuls a Tailwind - Bloomberg.com",
     "source": "Bloomberg.com",
     "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQeUFvdnVub1Mzd0ZZWkFPT2lHV0lRZkszWEs1NEszNTI5bkJhUXBuQlBnbHItQXIwak0yQ3piQURJSlZUS3RDTkxSWmlFVFBJZXFKNEtkcS1YYkdraHJta0JEWE45b3htSXRBemhnWThwTzh4blhrRjczYlpJSWp4azEtN3VyVUhhZTJYdDJVMTRORGR4ekRlZW5iUXYzMDVjNTBTNUZQdVdpWXFLMmxXVDJCTVBNQ2JweVlObg?oc=5",
-    "date": "Fri, 27 Nov 2026 02:30:00 GMT",
+    "date": "Fri, 27 Nov 2026 02:31:07 GMT",
     "score": 1.0
    },
    {
@@ -251,11 +251,39 @@
     "score": -1.0
    },
    {
-    "title": "Sensex, Nifty Trade Lower as IT Drags; Metals Outperform - HDFC Sky",
-    "source": "HDFC Sky",
-    "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNeUxkbUJBd1IxTVF0bG1ja3F5SEY1T0Z4Rm5tOGZlNGh4dFpRRlZ4LXVxekE1YTZqOFBwWHp5ZWtMelNlWlllYlVGSkpab2VZa3N4Ry0tWFB4aFVFdy1iWGFNUUcxaDVDT2duUU01NHEzZWItZjN4Tmh1MkJzWmZYSk5UVUVKSDNoOWFzQXNJN0hsdl9xMW5nbkNSU1BkY0EtcXlYTENuRFZTbjlHbHdncmt1SjJTX0tyUDYxU0dxbG5DVHlHU1o2WFNLV0VOU2FrNzNlME9jb0RjcE9lMUFSdDM4dFZYeEM5MXV4amJRZktpS1VoQ0tJSnlkbUdJZ1VLOEE?oc=5",
-    "date": "Fri, 27 Nov 2026 04:49:39 GMT",
+    "title": "Sensex, Nifty open lower as Brent crude surges above $96; Geopolitical tensions weigh on market sentiment - ChiniMandi",
+    "source": "ChiniMandi",
+    "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxORVUyWXB2SzdJX3FKTW5lOGxvZF81VEpYcENpOTR6VzZCOGpKbXNpb29YUHNmMXc1N2JjTWlPUlpTaG1aREk3WjN6LXkwQUQzRDBKUks0a3hjZzE3NUo5ZU9JUWt6d2JCT3M0ZFRkNTR0eVlHMF94T3JmdFVvUjdNMnhheTh5LVkzelo2OC1FS2V5d2k2cEVsUGJJMUhrWmNnYUFaMTBuTjJSMW54eTdiZ0tqa3JqQlhYV1hwbHotdnpQdkhlZFdvQkNB?oc=5",
+    "date": "Fri, 27 Nov 2026 04:53:31 GMT",
     "score": 0.0
+   },
+   {
+    "title": "Sensex, Nifty retreat after two-day rally as IT stocks, HDFC Bank weigh; rupee falls 24 paise - Fortune India",
+    "source": "Fortune India",
+    "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPVk1kSHltQzVZTENEalNEVlZCYmRuRG5aOG5TU1gyQlplc2h4Y1dJS0RQVWlERXdDWjJOOFlJX20xTjVRRkVBX2l2MGF2aTcxRmZiUWo1YTRfWmJpSkJtZUxJTV9lMUkzekpzMEpGdG9lMTRHQVZWcjNMWi1iRkpVY3lzR1Fhb2lVOXJNaVFPUlhOa2djTUVlWXJTM09ieEE1Tm9KUmktLUhJblVqSkk2YUJYTlBZNkZrTFl1UDRMV19va2VEQ3RtTkNMOExUZG_SAdwBQVVfeXFMTzJkU1Q4TzVsVEtHZmRjTm5QSEwxOUFVVFk2SEhELXNMYXplejdUbzZ4QnFBeXR3SzFwMW1QQkhMdkxEN3RRTHdRQXd0eGc3MEpTNHA3NDgxMDQ0NllETWEwcGg2S2lLU0l0dkdGT0VHYWs2VFE0d2xCUjA3dm95SnB6Yk1OOEJGOXBHVTBRU3NIdVVjZ045ZjVSLU1JWWdkQ196ZTFRSVd1NUFVUWVjSDhXS1JtbWxFX3lfUjBCLTRnOU1aczFXQnlaVVYtTjVXNVZaOEtqTjd3WFptNQ?oc=5",
+    "date": "Fri, 27 Nov 2026 04:49:13 GMT",
+    "score": 0.0
+   },
+   {
+    "title": "Sensex, Nifty decline in early trade as IT stocks witness profit-booking - PSU Watch",
+    "source": "PSU Watch",
+    "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOTWI2RDAzUnhHZUw2dmRPc0lwQko1dFhXLXRwTW5jZGtIcWhkTmZPY25ENHZCVGFLLWE3eE81UHgzUTJVcUxuVXJQZGV5bkxTWHh5algwWnBVOG90UWlDU1BFYmtGSFhJN0ZQRW1OSHotWk1vNkc1dE81emxPbVYwZGpUMUJEUURERmVnS1l0UV9DNGRFMzB6aklEUUZvaWpvRXNVam5ZaG5feU5hOHlEZVh1RzJab21ndWdz0gHIAUFVX3lxTE1ZekxBX1dVUnRNNjRGNlJMcURMdXNYTzVYN2I5VzhHTkdTazJKZ2E0Ym1YQkdSbHZDLVVFUzBfUkl3Y04wSXdlMVBzWVdTZ216eTdsaVRrNFJhRkZvTHJJbEVJaDFlR3pnU25LR0ZYV2Y0WFNqWDFJVnVudTNZeUVNbExtR0N2M2M3a2FZd3BPcndKUEc1X2psRi05SDFEYWRPTW9vWXRVU0Vfd2hQVlMtRkFvOVltUGxRRFZTY1QwbUhyNnNMTGNS?oc=5",
+    "date": "Fri, 27 Nov 2026 05:35:36 GMT",
+    "score": 0.0
+   },
+   {
+    "title": "Sensex, Nifty open in red, end winning streak; IT stocks lead losses - India Today",
+    "source": "India Today",
+    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNaFdOZzJaUkd4b25UNnNtTS1UZG40Z2FtR2RaX3BVUjNGS01IaFZsdFZ6VjNZbk1tNmxVQkJCNkduZkhxVVp2YW5MNEFWQTMtTHpMVWxNbzdDSjk3WHpram5zZkgtQnE5a3hpZ0JMUEt2LVJxam9iSWRmd1dicUZhMzl5QmtJWXpfNUFZdzdHTWlCd2ZkRF81SmJQNU05UUE3ZGlyUnZtZG92Uk5uQ0wwcVJsSHhYcVMyWVE1d1NmQW5QTkXSAcgBQVVfeXFMTmk4OUVpOFV2Y1NBMmVHWldyMjdrYzVfcHg5LVJYZ014TzBiLURzUFJ5aFNTaDlaa3hsZW13WlpHNjJOalNTcDd2d3U2QVNQQzFIYWY4aGU0ZWh3bkNsRE5lV2dPSEN5d0tvbkotc2NfaXVXRS1jVnhtZkRjQnBPcnYyY05HYjJwRE95aEh4SjFWcldKSUdoaG1CQUx5b0NxMUE5UndhRjI2Z2N1MVMxWTJXU1RSRnZXYW9tVkpmZjZxVjI5OG9HXzM?oc=5",
+    "date": "Fri, 27 Nov 2026 03:48:23 GMT",
+    "score": -1.0
+   },
+   {
+    "title": "Gift Nifty Signals Flat Open for Sensex, Nifty on Friday on Back of Weak Global Cues - HDFC Sky",
+    "source": "HDFC Sky",
+    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQa2NVRGJNZHhDZnJXN0RLeDRkSlZOdWo3VkN1cXpWTl9nS0FrcGQ1QXUzd0tpeFZqRUNPZTFkQzBFb1hlSURWbVZtOVlRT2lSd1RJbkZBblJ4ZGF1dTI4RkhnczZaWXZOOXRVMllzWHFHUHFTS2ZjbTB3Y1loZmUzdld1cWkxT2xfR0wwZUZLZEdzZjQxR2FhLU9KeVllVHJsS293UU1adWswODJhdnpLQ2gyT1Z0ZWJ1QWJzbXE2OE55bzQ?oc=5",
+    "date": "Fri, 27 Nov 2026 03:28:32 GMT",
+    "score": -1.0
    },
    {
     "title": "JPMorgan Sees Nifty at 29,000 by December 2027, Cites Foreign Buying and Earnings Recovery - Kotak Neo",
@@ -272,13 +300,6 @@
     "score": 0.0
    },
    {
-    "title": "Sensex, Nifty scale multi-month closing highs as tariff fears ease - The Economic Times",
-    "source": "The Economic Times",
-    "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPSV9CamI1eFJDbGNOc25rYXVzOS1uSlZZSU0xbTRHNlZRTVBJaVdjTll1MXpmRTdXbGRzWGJCRjBmR3BNWVBkU2k5QTdpRkRjUDZySDl6WlE3NTZ1ODl3WWlJN0xzdzljWUpDdTNRWW1KZ1lSVkxvRVRmRGxwMnBYeVF3b0NmakNSV25pWGtoQnhPTWdBU0R4cGFaUG1HMEZwRHhKN2ZMTjVUc2lhczd1T0UzOExXRWJ2amVFc0E5anV4TGFqekpwcDFMTk5iMFBIS05VUndhUmUyV2RaMmlKbEdR0gHbAUFVX3lxTE56enFVVGdXZXEtdHJTYm5XQUhic2pPZnVqUVlmbDBsOWRkWG5Ia05YOFRmdktiUHRfVnNGTTZlUDl5MkhBb0dHMmU4QlZjcnA2eUtMeTlvdkF2VFREbnQ1Y01tblI1MEc2SmhFakJ6a2JnS0YycjJiUzd4NFNEWjI5SU5HSVdGMlZTSWdsbXd5MWJkQnVPN0djaElrbW5jVFZqTmVvazRKcFN1OEhPSUcxVUpWUGNIOG9Yd1RwbDRzd2NabGZndWVfRGREUG95UmVNSjRsRi1HbUg5dw?oc=5",
-    "date": "Fri, 27 Nov 2026 01:10:06 GMT",
-    "score": -1.0
-   },
-   {
     "title": "Nifty IT index flags breakout from 3 important chart patterns; details here - Business Standard",
     "source": "Business Standard",
     "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNbzRTNjJTQUh6WEU1ZGxGVWo5TUZYRFFrVC00SjdyR2QzQTJfNUVmdVNJc25OOGlSWkd2RW9uLXd2MXkxNnBnYUNaWmMycmFHSzF3QzZrRzlhMDNkOUVlNi0wdFlBeE45QmhEalpMejVtNjZSX2p3aDVnSG95ZzlzNjZxVW5rSEpnWEpIWjFtRkxKQ2szWmk4ejlOWGhqYmpQVW92dGQzZnM0ZWZiOE5nVjUxUWIzNzFBX0dmX1R0SmY5NXFmZDNLdkFkWGRNRjIxZmtwUVV0eEfSAd4BQVVfeXFMT295NExDbGpvMXppQk9UdkJhakZxZXYzdk5QY192MU1HdWFiTEh4azNab2JRamZld1BJU0hZTkFxaXFtZnVZVjhrQWlVV2JzUGFOSDJYSHB0Yi16azNUQjVtdVE0WmpyY1JQLWw1UTNBQnMxUExwYTM5OWZJdEhsU09xZ001ZTVDWmg4QV9FZHhULU9uXzZ1ZVoxMklyeGxTZTN1Y1RVdFJlODJhUHZIWWpZdzlkVVRidHJsbEo0TmktMFFjVXpTWnpqTnh3ZTN0SkV2dEVTNTlLbmJ5bmdn?oc=5",
@@ -291,30 +312,9 @@
     "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQV3B3TkY5OXIwX1J1OVNEbk5pWWxTSlNpSFFBSy05blNaVVRsbmxwN0gyTkVhcUpxUUdyTFQxbW9aNllfQllNQ2ZWV1NWbUZDYllROTZ3NUJjbGJ4SlpnR1RfWG1UYkVtQTVtUnFBRG1WVXhnak44Nm5ERWZiUVRZRTFTbzU5Q2tjd1cxbUZqOGZPbnBCOG9UWl9CUXlKTi0xYjdhTVlMNWgtOGtDUmx2Wm1qSHhhb0FFWkVxTzFCQXAtdHNLRFhDVnJWMVJlVGZMZGJDOURESUlTU2MwTlVn?oc=5",
     "date": "Fri, 27 Nov 2026 02:50:20 GMT",
     "score": 0.0
-   },
-   {
-    "title": "Sensex Gains 390 Points, Nifty Closes Above 25,880 - HDFC Sky",
-    "source": "HDFC Sky",
-    "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQU0FUTHh4SkhqcFNIZDR4YWlkdm96Q21GX0VSXzk1S1J5SEVUdTlYUE1tV2FjRERHTjF2YmFpdlZpVVgtNDdhbzBzQkhZbWVaQlVYVUxtMEd6cEh1dnhnUVpMZ1AwVGMzRHFWVG12TTMtbEUwWHJkM0IzXzRlTUJfRTFCc1Q2RzRIZ0ZrNXJIYXBITm45bUFERE9HcjZpMGYxOWdBblFYR1hiQXlWZlZRNW83NzlJa1h5b0NRQjV5MWRjdmQxNHZPVWMzbU5odXp6emFGVk1Ia2ZNRVpOZGc?oc=5",
-    "date": "Thu, 26 Nov 2026 11:16:56 GMT",
-    "score": 1.0
-   },
-   {
-    "title": "Gift Nifty indicates a cautious opening for Indian stocks - BusinessLine",
-    "source": "BusinessLine",
-    "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNcFN3M1R4MjBCQnZyWHU3aFNILTJobDZkVVhOckRIaXZPZmZldFQ2djQwMDFhTm1uRUdWTFl6bWpHMld4czZ1ZEZGWWdXWFFlRG02bXB1dkFGVFJibVFDY1ZtRWNYYlpESHNKT1hBeEZXTVgxcnUxTFlzZVAyQVhFMjl3aWhOZmFyUGV5d2lpaW5INnBVc01MVnlxY0RNai1feHlONDhxZWZNcFNBV25xVS1ZbWlDR0dqRWxsNnh4b9IBxgFBVV95cUxOeHFISjFPVEM5STZDRm9YRWZCY3FZa2F1UEpuV0UyMDMwekxoQ0VkVXdOY2ZJOTl1ZVlZVUlweEI1ZkxYYXoxU01fTzYwLVRzbGoydGNZNWFHSWJtYnFPY1M4NHFTd210RXlIRjBrWTZaSGtJeDZLc09QVEc1MkZ1TmthOW9Xc01hSXdvR25KRENNWktYeGt6VG5LS016OE5QWkIwTnkwSDBadTZyWmdnUTZRME1FM2Z6Mm1vY1JnVi1pVjRqU2c?oc=5",
-    "date": "Fri, 27 Nov 2026 01:54:28 GMT",
-    "score": 0.0
-   },
-   {
-    "title": "Gift Nifty Today: Sensex, Nifty Eye Positive Opening - HDFC Sky",
-    "source": "HDFC Sky",
-    "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPLV9YZWtjRV9iMThSbHpDdV9WcGlJZ1ItSDQ1M18wRXZuMHBsWnRRRDlmYkdjNVVLaXRYckxvazRMM3N1MnE2M0VUcU1RQTlHSEhEUXVjcUFpSmIwZE1CV0Zjd1JGeWNBQkFReEx0dE9abHg4Z3B2b0h6MEZfUV9BSlM5ZGViM1VoT1E?oc=5",
-    "date": "Thu, 26 Nov 2026 11:23:12 GMT",
-    "score": 1.0
    }
   ],
-  "india_score": 0.083,
+  "india_score": -0.083,
   "global": [
    {
     "title": "Asian Markets Mostly Higher as Sentiment Stabilizes - WSJ",
@@ -334,7 +334,7 @@
     "title": "Wall Street Flips From AI Euphoria to Gloom - Bloomberg.com",
     "source": "Bloomberg.com",
     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZ3dMUTlPVV9IdUJTQ0NWSjV2ZEZLbmNnWWtoMEpQT05KdzZSX0d5cjRtNzBCYTZMdzBVZmQ0QU14a3B3dnRncGxPMmMyR0I3djQycmp0VWtWV0NqY3NQdHdPQlhDZGZuX2MwSHFFRmI2N3NydV9Bb3BRR1ZzUUs5NWNucklfOEZVNzczamJQdEY1OHRzRGdNdGZjb2ZYdw?oc=5",
-    "date": "Fri, 27 Nov 2026 03:28:17 GMT",
+    "date": "Fri, 27 Nov 2026 04:58:17 GMT",
     "score": 0.0
    },
    {
@@ -359,6 +359,13 @@
     "score": 1.0
    },
    {
+    "title": "Asian markets rebound as AI jitters ease, but rally faces scrutiny - Traders Union",
+    "source": "Traders Union",
+    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNaU90SlpvVVhoRHFFb3FodmhUdEVhYXFGRGNfdFNCWWZ5X3huWUtSejdrdFpvMi1PUEZYWkpTZXJ6ZnlSOEk0SlNtUjE4YUtaUTNXX0N1OG1OUl9tSm53WVA0S25RRGhZdWZ3VGJSQXllV1YwOTVIbE5jVGt5a0hTdHRSeVN6eFZ0VnFJ?oc=5",
+    "date": "Fri, 27 Nov 2026 05:54:21 GMT",
+    "score": 1.0
+   },
+   {
     "title": "Japan, South Korea indices rise: Asian markets extend gains as AI stocks rebound - CNBC TV18",
     "source": "CNBC TV18",
     "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNSWFsQWU5UWpaUC03ZkdsMHlZc3RmUV93OHN0MlBUcW02RGtMTGNWQTNzdWgxczlURDBaVnA5b2NuNE4yTGxuVm80SUdrOW1vMnprTGpkRFJuQXdJVWpVckJyTU9rSUV3WkEyLUtWcTBOeXRyNndqT0hZR2RXdmJOVWZJODhWdTAzWC1nSm1lUjVHRkJudmh5cWdLWEpoWVIxVC1FblVWeW5kSEZDUDZuamtZOHhYbTNLQmdMSG5acmlPSFpUNER5TXFJTlBYSlJWMXlWSmRMZGLSAd4BQVVfeXFMTjZ1U3NzY0ptZFVONVl1eWV4N0VQQm9nVm41TlVXWWdPNVh0ejNHdUZCWjd5cnVJT0tpQkNCUklWU1NSQnhEZk1UWWVBQUZvQVpHX1FyU3Q4N1ZqbHhOVm5IcXlDRVo0SEthaE9sMGh5bEpFcE9xYmg5X1YtN0F0UW84MUY3Z09XNlB0UXpZV3cxVzRTUVdoVVRzeGJzSmZJOTdTRVdSdlhVaTg1bU1nNTdQMGsxM2dDTVl5UVpyRVViNGF4T0pYMk9QRk1vdTlWYlJ5aWlRZnNGdVY1Tmhn?oc=5",
@@ -371,13 +378,6 @@
     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQSDV2akFUS01LbEFVVzJWbm5VQ1REakNSOWRnVHpBRGNidmZxQ2hLMjFNYVdmTDVCSFlmd2pzUUhudVRLTW05SFNDV0E1UXZNYWYwVnZZNWN0bmliaHlSYWdNcFRNVjNCUHRfd1BvamFZZUtaVUk2NDJRNzN6ckl6OUpOMlVDTFBNWUt3SExXcFFYQXA4VnkwTGdfV2VOUzZLNnpzN3kxbHlhSkxKLWxqbngzbkFOZzBldjJnN2NlejZqOFE?oc=5",
     "date": "Fri, 27 Nov 2026 02:24:12 GMT",
     "score": 1.0
-   },
-   {
-    "title": "Brent crude oil climbs as West Asia hostilities renew concerns over regional energy export routes - Traders Union",
-    "source": "Traders Union",
-    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNVWZLU0FqR08yZU5tdHJyUVZxSFVnSDROTkVQYVVNV0poMzVZU0F2Wm45eDdjV0d5SE8waG5HTllXOGNTS3NFNGxnZ3Z5NEN4ejIzTUIydXNrRmlHSi1RMFF0cnQ3ejdvT1hreVkyMmNSQnpmbUxDQ1JWZ2VqMnpFeEZpOWlVV00?oc=5",
-    "date": "Thu, 26 Nov 2026 17:34:27 GMT",
-    "score": 0.0
    },
    {
     "title": "Asian markets end in positive zone, European indices trading up - News On AIR",
@@ -401,9 +401,9 @@
     "score": 0.0
    }
   ],
-  "global_score": 0.667
+  "global_score": 0.75
  },
- "updated": "2026-11-27T04:57:30+00:00",
+ "updated": "2026-11-27T05:58:40+00:00",
  "errors": [
   "option chain nifty: HTTP Error 404: Not Found",
   "option chain banknifty: HTTP Error 404: Not Found"
