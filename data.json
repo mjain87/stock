@@ -1,15 +1,15 @@
 {
  "indices": {
   "nifty": {
-   "price": 25682.1,
+   "price": 25704.3,
    "prev": 25884.5,
-   "chg_pct": -0.782,
-   "rsi": 67.57,
-   "ema20": 24940.97,
-   "ema50": 24208.03,
-   "sma200": 24003.69,
-   "macd_hist": 38.752,
-   "atr": 348.23,
+   "chg_pct": -0.696,
+   "rsi": 68.05,
+   "ema20": 24943.08,
+   "ema50": 24208.9,
+   "sma200": 24003.8,
+   "macd_hist": 40.169,
+   "atr": 348.75,
    "pivot": 25864.32,
    "r1": 25995.13,
    "r2": 26105.77,
@@ -19,22 +19,22 @@
    "lo20": 22656.75,
    "intra": {
     "session_date": "2026-11-27",
-    "bars": 10,
-    "last_bar": "11:28",
+    "bars": 15,
+    "last_bar": "12:42",
     "open": 25839.25,
     "high": 25909.1,
-    "low": 25674.25,
-    "last": 25682.2,
-    "ema9": 25757.51,
-    "ema21": 25801.78,
-    "rsi15": 34.99,
+    "low": 25666.85,
+    "last": 25706.45,
+    "ema9": 25726.38,
+    "ema21": 25767.7,
+    "rsi15": 39.41,
     "or_ready": true,
     "lv_next": {
-     "p": 25755.18,
-     "r1": 25836.12,
-     "s1": 25601.27,
-     "r2": 25990.03,
-     "s2": 25520.33
+     "p": 25760.8,
+     "r1": 25854.75,
+     "s1": 25612.5,
+     "r2": 26003.05,
+     "s2": 25518.55
     },
     "or_high": 25909.1,
     "or_low": 25803.6,
@@ -52,15 +52,15 @@
    }
   },
   "banknifty": {
-   "price": 63240.55,
+   "price": 63383.45,
    "prev": 63535.3,
-   "chg_pct": -0.464,
-   "rsi": 67.77,
-   "ema20": 60783.5,
-   "ema50": 58524.97,
-   "sma200": 56824.88,
-   "macd_hist": 239.626,
-   "atr": 1070.47,
+   "chg_pct": -0.239,
+   "rsi": 68.75,
+   "ema20": 60797.11,
+   "ema50": 58530.58,
+   "sma200": 56825.59,
+   "macd_hist": 248.745,
+   "atr": 1073.68,
    "pivot": 63657.45,
    "r1": 63982.6,
    "r2": 64429.9,
@@ -70,22 +70,22 @@
    "lo20": 54047.9,
    "intra": {
     "session_date": "2026-11-27",
-    "bars": 10,
-    "last_bar": "11:28",
+    "bars": 15,
+    "last_bar": "12:42",
     "open": 63339.85,
     "high": 63931.0,
-    "low": 63207.75,
-    "last": 63240.55,
-    "ema9": 63446.37,
-    "ema21": 63560.27,
-    "rsi15": 37.21,
+    "low": 63163.1,
+    "last": 63383.45,
+    "ema9": 63392.55,
+    "ema21": 63484.76,
+    "rsi15": 43.9,
     "or_ready": true,
     "lv_next": {
-     "p": 63459.77,
-     "r1": 63711.78,
-     "s1": 62988.53,
-     "r2": 64183.02,
-     "s2": 62736.52
+     "p": 63492.52,
+     "r1": 63821.93,
+     "s1": 63054.03,
+     "r2": 64260.42,
+     "s2": 62724.62
     },
     "or_high": 63881.25,
     "or_low": 63339.85,
@@ -103,15 +103,15 @@
    }
   },
   "sensex": {
-   "price": 83822.82,
+   "price": 83667.68,
    "prev": 84328.59,
-   "chg_pct": -0.6,
-   "rsi": 70.49,
-   "ema20": 80944.43,
-   "ema50": 78204.53,
-   "sma200": 77105.93,
-   "macd_hist": 150.102,
-   "atr": 1148.92,
+   "chg_pct": -0.784,
+   "rsi": 69.43,
+   "ema20": 80929.65,
+   "ema50": 78198.45,
+   "sma200": 77105.16,
+   "macd_hist": 140.201,
+   "atr": 1158.28,
    "pivot": 84211.66,
    "r1": 84668.67,
    "r2": 85008.75,
@@ -121,22 +121,22 @@
    "lo20": 73181.9,
    "intra": {
     "session_date": "2026-11-27",
-    "bars": 9,
-    "last_bar": "11:13",
+    "bars": 14,
+    "last_bar": "12:27",
     "open": 84093.24,
     "high": 84284.34,
-    "low": 83678.83,
-    "last": 83822.82,
-    "ema9": 83940.87,
-    "ema21": 84034.64,
-    "rsi15": 42.32,
+    "low": 83547.92,
+    "last": 83667.68,
+    "ema9": 83752.15,
+    "ema21": 83887.68,
+    "rsi15": 40.73,
     "or_ready": true,
     "lv_next": {
-     "p": 83928.66,
-     "r1": 84178.5,
-     "s1": 83572.98,
-     "r2": 84534.18,
-     "s2": 83323.15
+     "p": 83833.32,
+     "r1": 84118.71,
+     "s1": 83382.29,
+     "r2": 84569.74,
+     "s2": 83096.89
     },
     "or_high": 84284.34,
     "or_low": 83944.6,
@@ -171,14 +171,14 @@
    "chg_pct": 0.328
   },
   "nikkei": {
-   "price": 58732.5195,
+   "price": 58711.1094,
    "prev": 57499.1602,
-   "chg_pct": 2.145
+   "chg_pct": 2.108
   },
   "hangseng": {
-   "price": 22754.6602,
+   "price": 22680.5801,
    "prev": 22226.8809,
-   "chg_pct": 2.375
+   "chg_pct": 2.041
   },
   "ftse": {
    "price": 10609.2998,
@@ -191,24 +191,24 @@
    "chg_pct": 2.078
   },
   "crude": {
-   "price": 86.21,
+   "price": 86.01,
    "prev": 83.68,
-   "chg_pct": 3.023
+   "chg_pct": 2.784
   },
   "gold": {
-   "price": 3675.5,
+   "price": 3685.5,
    "prev": 3535.8,
-   "chg_pct": 3.951
+   "chg_pct": 4.234
   },
   "usdinr": {
-   "price": 92.89,
+   "price": 92.787,
    "prev": 92.2376,
-   "chg_pct": 0.707
+   "chg_pct": 0.596
   },
   "dxy": {
-   "price": 103.665,
+   "price": 103.678,
    "prev": 103.67,
-   "chg_pct": -0.005
+   "chg_pct": 0.008
   },
   "us10y": {
    "price": 4.848,
@@ -216,9 +216,9 @@
    "chg_pct": -1.142
   },
   "vix": {
-   "price": 16.7925,
+   "price": 16.505,
    "prev": 16.84,
-   "chg_pct": -0.282
+   "chg_pct": -1.989
   }
  },
  "oi": {},
@@ -235,6 +235,13 @@
     "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNeUxkbUJBd1IxTVF0bG1ja3F5SEY1T0Z4Rm5tOGZlNGh4dFpRRlZ4LXVxekE1YTZqOFBwWHp5ZWtMelNlWlllYlVGSkpab2VZa3N4Ry0tWFB4aFVFdy1iWGFNUUcxaDVDT2duUU01NHEzZWItZjN4Tmh1MkJzWmZYSk5UVUVKSDNoOWFzQXNJN0hsdl9xMW5nbkNSU1BkY0EtcXlYTENuRFZTbjlHbHdncmt1SjJTX0tyUDYxU0dxbG5DVHlHU1o2WFNLV0VOU2FrNzNlME9jb0RjcE9lMUFSdDM4dFZYeEM5MXV4amJRZktpS1VoQ0tJSnlkbUdJZ1VLOEE?oc=5",
     "date": "Fri, 27 Nov 2026 04:49:39 GMT",
     "score": 0.0
+   },
+   {
+    "title": "Sensex down 700 points: Why is stock market falling today? - India Today",
+    "source": "India Today",
+    "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQYTd3U0t4cWdmeFN4b2FWVGROMWU1aldBd0cxN3BORWQ2RzBFcDcta2taR01RcGF6Rkg5aEZMNm1QQl9jZzV6dm05WHpVb2FKQ2VIV2tjamtNdENtanExSS1JYWdqd1FPdmNSajBVY3lBZk5pNzhFYy1BSGU3c3pLeVA5OGtLUmtFY2xPb2pJZnlRaDlZcmN3ZE83dTRFbHY1ZHl6djdLbUhIbHVpSG56bWtnVWpveGfSAbwBQVVfeXFMT1VINFB6QU5SaVJrQi14MU1NamlHREJGbTIxWEd2Z3ZZMTJSSDZ4d0pGT1ZWMXNuWXlXeldaNW00cGlvZjZFY3VLTHNBaHAzVlpNZ0Fab0RyX2xQTDFEdlU0d0pPdE8yN2UyZEJMOUlYS0xFOFE4Umt0OGYwRWkyVDdVLTVtOWt0WHNkdWY5bGI3WUdJMWt1QjlVdkl2dGVrbnQwSk9zdlpXdGM4a0JYWGZVWF95M1hqLWg4bmw?oc=5",
+    "date": "Fri, 27 Nov 2026 06:11:33 GMT",
+    "score": -1.0
    },
    {
     "title": "Nifty’s Sharp November Rally Gives India’s IPO Hopefuls a Tailwind - Bloomberg.com",
@@ -265,20 +272,6 @@
     "score": 0.0
    },
    {
-    "title": "Sensex, Nifty decline in early trade as IT stocks witness profit-booking - PSU Watch",
-    "source": "PSU Watch",
-    "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOTWI2RDAzUnhHZUw2dmRPc0lwQko1dFhXLXRwTW5jZGtIcWhkTmZPY25ENHZCVGFLLWE3eE81UHgzUTJVcUxuVXJQZGV5bkxTWHh5algwWnBVOG90UWlDU1BFYmtGSFhJN0ZQRW1OSHotWk1vNkc1dE81emxPbVYwZGpUMUJEUURERmVnS1l0UV9DNGRFMzB6aklEUUZvaWpvRXNVam5ZaG5feU5hOHlEZVh1RzJab21ndWdz0gHIAUFVX3lxTE1ZekxBX1dVUnRNNjRGNlJMcURMdXNYTzVYN2I5VzhHTkdTazJKZ2E0Ym1YQkdSbHZDLVVFUzBfUkl3Y04wSXdlMVBzWVdTZ216eTdsaVRrNFJhRkZvTHJJbEVJaDFlR3pnU25LR0ZYV2Y0WFNqWDFJVnVudTNZeUVNbExtR0N2M2M3a2FZd3BPcndKUEc1X2psRi05SDFEYWRPTW9vWXRVU0Vfd2hQVlMtRkFvOVltUGxRRFZTY1QwbUhyNnNMTGNS?oc=5",
-    "date": "Fri, 27 Nov 2026 05:35:36 GMT",
-    "score": 0.0
-   },
-   {
-    "title": "Sensex, Nifty open in red, end winning streak; IT stocks lead losses - India Today",
-    "source": "India Today",
-    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNaFdOZzJaUkd4b25UNnNtTS1UZG40Z2FtR2RaX3BVUjNGS01IaFZsdFZ6VjNZbk1tNmxVQkJCNkduZkhxVVp2YW5MNEFWQTMtTHpMVWxNbzdDSjk3WHpram5zZkgtQnE5a3hpZ0JMUEt2LVJxam9iSWRmd1dicUZhMzl5QmtJWXpfNUFZdzdHTWlCd2ZkRF81SmJQNU05UUE3ZGlyUnZtZG92Uk5uQ0wwcVJsSHhYcVMyWVE1d1NmQW5QTkXSAcgBQVVfeXFMTmk4OUVpOFV2Y1NBMmVHWldyMjdrYzVfcHg5LVJYZ014TzBiLURzUFJ5aFNTaDlaa3hsZW13WlpHNjJOalNTcDd2d3U2QVNQQzFIYWY4aGU0ZWh3bkNsRE5lV2dPSEN5d0tvbkotc2NfaXVXRS1jVnhtZkRjQnBPcnYyY05HYjJwRE95aEh4SjFWcldKSUdoaG1CQUx5b0NxMUE5UndhRjI2Z2N1MVMxWTJXU1RSRnZXYW9tVkpmZjZxVjI5OG9HXzM?oc=5",
-    "date": "Fri, 27 Nov 2026 03:48:23 GMT",
-    "score": -1.0
-   },
-   {
     "title": "Gift Nifty Signals Flat Open for Sensex, Nifty on Friday on Back of Weak Global Cues - HDFC Sky",
     "source": "HDFC Sky",
     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQa2NVRGJNZHhDZnJXN0RLeDRkSlZOdWo3VkN1cXpWTl9nS0FrcGQ1QXUzd0tpeFZqRUNPZTFkQzBFb1hlSURWbVZtOVlRT2lSd1RJbkZBblJ4ZGF1dTI4RkhnczZaWXZOOXRVMllzWHFHUHFTS2ZjbTB3Y1loZmUzdld1cWkxT2xfR0wwZUZLZEdzZjQxR2FhLU9KeVllVHJsS293UU1adWswODJhdnpLQ2gyT1Z0ZWJ1QWJzbXE2OE55bzQ?oc=5",
@@ -300,11 +293,11 @@
     "score": 0.0
    },
    {
-    "title": "Nifty IT index flags breakout from 3 important chart patterns; details here - Business Standard",
+    "title": "Sensex tanks 780 pts intraday after 2-day rise: Consolidation here to stay? - Business Standard",
     "source": "Business Standard",
-    "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNbzRTNjJTQUh6WEU1ZGxGVWo5TUZYRFFrVC00SjdyR2QzQTJfNUVmdVNJc25OOGlSWkd2RW9uLXd2MXkxNnBnYUNaWmMycmFHSzF3QzZrRzlhMDNkOUVlNi0wdFlBeE45QmhEalpMejVtNjZSX2p3aDVnSG95ZzlzNjZxVW5rSEpnWEpIWjFtRkxKQ2szWmk4ejlOWGhqYmpQVW92dGQzZnM0ZWZiOE5nVjUxUWIzNzFBX0dmX1R0SmY5NXFmZDNLdkFkWGRNRjIxZmtwUVV0eEfSAd4BQVVfeXFMT295NExDbGpvMXppQk9UdkJhakZxZXYzdk5QY192MU1HdWFiTEh4azNab2JRamZld1BJU0hZTkFxaXFtZnVZVjhrQWlVV2JzUGFOSDJYSHB0Yi16azNUQjVtdVE0WmpyY1JQLWw1UTNBQnMxUExwYTM5OWZJdEhsU09xZ001ZTVDWmg4QV9FZHhULU9uXzZ1ZVoxMklyeGxTZTN1Y1RVdFJlODJhUHZIWWpZdzlkVVRidHJsbEo0TmktMFFjVXpTWnpqTnh3ZTN0SkV2dEVTNTlLbmJ5bmdn?oc=5",
-    "date": "Fri, 27 Nov 2026 04:19:16 GMT",
-    "score": 0.0
+    "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPOVBhbjcyanBWeERhZlZQdWdaak0zN2hhZzU1bDR6a0lPdmlBOV9UMmdWejBuT1BMRG96QVJFNk9Qb2J6X0REV1QycTY4TTJ4eG50QktrMFBHYnZWeXgtc016RVpSclhyQ0t1ZlJ4UE1fMU9XLTViZVhKTXJCVmNYaGF3cWxwM0UyU0s2OWkzNHNJN1F5VWR1X3cwXzRqdTRtdzMxX1I1VXFJekhwa0puUGR4OFZkSFViSWhsbWNFSFJYcEJaM3RzM2tMUk83QmEtd00xVkozdlNWVUp2U3dtSVE5QVp4NjJibzcwa2pDS1jSAfYBQVVfeXFMTk9XOS12NHlLVUxRZ1A1Z240empGb3RqcUdGRXY0dmpRbUl5N0R2SG5kWkVYQ1UxalBYd0RMeVJDY2hyc2F2SklzVktmOXp6RVBmcW4zXzZxbDdUV3h0NzV2clh4bjZhUjFRcGJ1eWpxQmsxd3psZGtjMlR4b0s1eTljZElBUVduQzF1OGYxcWh1RGVwMll2NnotaFUySDB4MjZ3bE83WnNMSk5Tb1VCbFBtTWpVRWdYVHgxdHR2ek1LQVI5YWxWQmZ6Y1BMV3g0TXdEQmZnVi1VSGN4a3BJZVB6MWRpYUd4a2tqeWZxU1dUY19OV1Z3?oc=5",
+    "date": "Fri, 27 Nov 2026 06:52:14 GMT",
+    "score": 1.0
    },
    {
     "title": "Pre-Market 27 November 2026: GIFT Nifty Points To Flat Start As Crude Oil And Global Cues Shape Trade - Kotak Neo",
@@ -312,15 +305,22 @@
     "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQV3B3TkY5OXIwX1J1OVNEbk5pWWxTSlNpSFFBSy05blNaVVRsbmxwN0gyTkVhcUpxUUdyTFQxbW9aNllfQllNQ2ZWV1NWbUZDYllROTZ3NUJjbGJ4SlpnR1RfWG1UYkVtQTVtUnFBRG1WVXhnak44Nm5ERWZiUVRZRTFTbzU5Q2tjd1cxbUZqOGZPbnBCOG9UWl9CUXlKTi0xYjdhTVlMNWgtOGtDUmx2Wm1qSHhhb0FFWkVxTzFCQXAtdHNLRFhDVnJWMVJlVGZMZGJDOURESUlTU2MwTlVn?oc=5",
     "date": "Fri, 27 Nov 2026 02:50:20 GMT",
     "score": 0.0
+   },
+   {
+    "title": "Nifty Prediction Today – November 27, 2026: Nifty 50 Futures: Stuck inside a range - BusinessLine",
+    "source": "BusinessLine",
+    "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOOWJ2YUlIMWtnMVRzd0dLNGJnQkdhZE1JN2lySFd1NDlMWXViNHUzZkNfZF9oQUZhanRBSms1b0NQdTdaQmdReXZMWXlFd3phWWt5enl5X3UwOXRBNlZVbHA3Z0poOW14ZWRiQ3Nwc2JSWGt1ZG9ma2RWS1ZPX1BEd0lWWTFUTEFQZDBhWWp1Q1RFRWZFdV9YUzY4T0lrU0hTOEhVcmFMd3l1NDlGRVdRZVpMSmNHMTViQzlEQkpxUkJ0WmVvWWJrQ1J1c3dIeGY5OF9pandEclFMeE9BVDl5aEFmcmZzb2NXa2N1Z0hKUkc2allrcEHSAfwBQVVfeXFMTXdPeThSeWdEX05kMGFzX1RLVkdYUXBGUEJNbEU1SU56NlByQTlfY0J2cWhzQ1ZnNFNLNExwZk1jSmRvQ3Q2SDNIX3l6WmhPb0V1RmNaR0lSS2Y1NTdZUDlta0oxMUpKenBkNEIyNUMzc3VEUDVDbXIwczNfWTkwSlR6enlqQ1JQRFZTUjdNVEN1MklQTjRpX1NkeDlkVTc4T2VfU09pSlFQRU9HNWdSeGZWbjlGbmdWZmlBc1R6MF9Ncm00ZHlTVThTMTduODFIblB3by1TNXhucm52RkNmSld1TVl6dllya0pIclA2dF9XNE5UQkJaTFRwcmdX?oc=5",
+    "date": "Fri, 27 Nov 2026 05:01:01 GMT",
+    "score": 0.0
    }
   ],
-  "india_score": -0.083,
+  "india_score": 0.0,
   "global": [
    {
-    "title": "Asian Markets Mostly Higher as Sentiment Stabilizes - WSJ",
+    "title": "Asian Markets Rise as AI Sentiment Stabilizes - WSJ",
     "source": "WSJ",
     "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOcnRDczhFTDhaVXp4YmhscHNzZ3M3Z2JIVkNtdXJoQlJxai1BYnVtczd2Z3B6LThnRUVaWUxtVllXZnZWY0gzWVdTUlJSOFNMVXZfSWEwX2wyUVRnWUVtcVJlY1E4eXdaSk5wNDV2Z0lMSlBuUm13dy1saXp6ZlhLTTdBNHVLT1huOGpjYXNFbWtVdw?oc=5",
-    "date": "Fri, 27 Nov 2026 02:13:00 GMT",
+    "date": "Fri, 27 Nov 2026 05:53:00 GMT",
     "score": 1.0
    },
    {
@@ -334,15 +334,29 @@
     "title": "Wall Street Flips From AI Euphoria to Gloom - Bloomberg.com",
     "source": "Bloomberg.com",
     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZ3dMUTlPVV9IdUJTQ0NWSjV2ZEZLbmNnWWtoMEpQT05KdzZSX0d5cjRtNzBCYTZMdzBVZmQ0QU14a3B3dnRncGxPMmMyR0I3djQycmp0VWtWV0NqY3NQdHdPQlhDZGZuX2MwSHFFRmI2N3NydV9Bb3BRR1ZzUUs5NWNucklfOEZVNzczamJQdEY1OHRzRGdNdGZjb2ZYdw?oc=5",
-    "date": "Fri, 27 Nov 2026 04:58:17 GMT",
+    "date": "Fri, 27 Nov 2026 06:28:17 GMT",
     "score": 0.0
    },
    {
-    "title": "Asian stocks rise for second day, crude oil gains - Moneycontrol.com",
-    "source": "Moneycontrol.com",
-    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxONFJIam9aVEQxTXBBcFFobGJLUzhwLWY3X1Y2OFpuZk1iZWROY3BLSXYxdk14SzJnQlpwb3BKRGFqY2VQNVhEZkN1cXdrVlVicWdfbDRhMVpDMk1pckYyN0pCbFhpanY2ZkgzM3N0eDRzOU5uRm5PSnZ5S1FodVNoSkR0aUs2MjBvTVlOd2dXTkJOTEZsSjlRd3VYOHpNU0tMLWZmUHRNdDNIU3hqV1NnRDNlNNIBuAFBVV95cUxPNUpRcnZvejY1bkxTZ3hsc2lhVUd3a0RxZ2JCeXdScWNtQndzX0tHc2JfNHFMZmhya2duTjFrV0pRTndMSm4wbGdFQ1E2U3c2aGNDWW5rWFZjdlVXV0FGRXFDN29vX1AxZjhqNUdVZDYyaVU4bUxKend0RF9iR1F5MS1BejFRTmx0bHI1LWxZSHd4NEUyWlZReVBLT0lvQkpFcnBTSzlLOGVsUnhKb29QV1dGNDhYREN3?oc=5",
-    "date": "Fri, 27 Nov 2026 01:29:23 GMT",
+    "title": "Crude Oil Futures Rise on Positive Global Trends - Rediff MoneyWiz",
+    "source": "Rediff MoneyWiz",
+    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPdzVhNTFRbDVuOVdmb3g2aWtUU2NwQUNsV1M4YUtYamVGVHJsNVQ3NnJaU094Vkl6a2NMaW55TVJWMGhhal92aGhNaU5TRFl3VnR1NVZ4cGZBdDV5OHVPV0YxR1FDZl9FWGVBUlhRXzdRYi1XcFJ4dEtRTy1vV001RUFzMGM1UndwblhYbDFnY0xDVjNxUEN4enVoelBtaV9IRGfSAacBQVVfeXFMUGl2d29rZ1NvNnRGb1RRMVVnRHZEVGE2QXFXRnVleDYzWngyMzNoaVFtRjVUZXg1WVJIN2tOOTR1SHBIQm5sQkd0alllMGdYUXdoNEJ5R3VLMktwTjRXRlA3d1dJNjZvLXR3ajU1MG5nYmgwRmVmeXdURGtWcVJNQkc3R2lWbV91aVlqTFRvMmV3MnlCNlZ0a1dkeGxqclo1QkpoNzdvVmM?oc=5",
+    "date": "Fri, 27 Nov 2026 06:12:50 GMT",
     "score": 1.0
+   },
+   {
+    "title": "Asian shares mostly rise ahead of Wall Street's reopening after the Thanksgiving holiday - Yahoo Finance",
+    "source": "Yahoo Finance",
+    "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOMU9SZUVIYWlfZHJqaUtENDVxWVZLTVdDcUNDZE4wTzc5THl1S2xScEU4SGFYMGRfdFdXMUJKNVRPaEFMbE5Eb0s2Q3VjblJjZ3BRTDZOX2l0RFZNV3gyTGprWkg1VjR3WGk1cVpSU2djLTBBMmNISldVeWVBWWQ3VlIxaWdxVWx6NmIteDZ5Rjl1MEp4QVhDRTViZkhjckM1eWNnbw?oc=5",
+    "date": "Fri, 27 Nov 2026 02:18:00 GMT",
+    "score": 1.0
+   },
+   {
+    "title": "Crude Oil Rises As Middle East Attacks Revive Concerns Over Supply Disruptions By Kedia Advisory - Investing.com India",
+    "source": "Investing.com India",
+    "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOOUpRT2V4RUU4bFpobnM3TnVrZ1pUUE01dTdJc3B0QUJ4S2syMGNIRHBzR24zb2xKd2ZNLXpYN24xcDktbWg0UGI3RWxLNlpBdkRWbjE2c0lqcFhhT1dUN0k2Q3kzVTdDRUdlVWxpYWptNXBkcjhOLWk0aW5scHVnMjVTelpBWmUzQmJhM1pOcFJNZ3JVVmRNblhrSEZzZDJKME5telItU25peHlDa1ZGM1Q4RHdYWlpVMlA2N1FnT19nSVAxaE9nQjQzTVRCQQ?oc=5",
+    "date": "Fri, 27 Nov 2026 06:08:13 GMT",
+    "score": 0.0
    },
    {
     "title": "Medtronic narrowly beat Wall Street estimates for Q2 profit - Medical Buyer",
@@ -352,17 +366,24 @@
     "score": 0.0
    },
    {
-    "title": "Sensex jumps over 400 points, Nifty holds above 23,360 as crude oil prices ease - DD News",
-    "source": "DD News",
-    "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWDd4YmhkeWV2Y1VIUV9SVGpWcV9KNmZQeFVaNjFFZWxmcTIxM3dkMnFUTVVsbEY2b2dhNTJaSVF5UXpLZl9DYTVMd2psYVBrWF96TkN0dHZlb3h2emdBRmVhc2kyRm1zVnEzdktZSmpuZ20zb2FrQWNwRDhBdFhtWUFtME5DdkMzU251SGdveVFTMS1Pd19kZUxQRjdlclYzY082ZmdB?oc=5",
-    "date": "Thu, 26 Nov 2026 10:14:06 GMT",
-    "score": 1.0
-   },
-   {
     "title": "Asian markets rebound as AI jitters ease, but rally faces scrutiny - Traders Union",
     "source": "Traders Union",
     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNaU90SlpvVVhoRHFFb3FodmhUdEVhYXFGRGNfdFNCWWZ5X3huWUtSejdrdFpvMi1PUEZYWkpTZXJ6ZnlSOEk0SlNtUjE4YUtaUTNXX0N1OG1OUl9tSm53WVA0S25RRGhZdWZ3VGJSQXllV1YwOTVIbE5jVGt5a0hTdHRSeVN6eFZ0VnFJ?oc=5",
     "date": "Fri, 27 Nov 2026 05:54:21 GMT",
+    "score": 1.0
+   },
+   {
+    "title": "WTI Price Forecast: Bullish Breakout Opens Path Toward $93 - FXEmpire",
+    "source": "FXEmpire",
+    "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPeHlGM3ZEaGF6Sk5NZHh1ZUpLV2RiWDh1SWtCbEtDdmVyWXVLdkR2a1JBVFhycTdRWFVoWEpqc3I3Xzg1aUo4RnBpRU1kOHc2TzNzaUZNaElTZmZLRTE2SExQa0FCT1psdjVOaHJCU0NlNGFYZDBIaWJjSG5mckI1Z1hjakpxc2d3UmFJZENIZ0pGc2NTeGQ3bnkyQi1ZWmZwZXZXdkVFRzdTVXM?oc=5",
+    "date": "Fri, 27 Nov 2026 04:13:38 GMT",
+    "score": 0.0
+   },
+   {
+    "title": "Pre-Market Update: GIFT Nifty Signals Positive Start; Crude Oil, Rupee in Focus - Dalal Street Investment Journal",
+    "source": "Dalal Street Investment Journal",
+    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQSDV2akFUS01LbEFVVzJWbm5VQ1REakNSOWRnVHpBRGNidmZxQ2hLMjFNYVdmTDVCSFlmd2pzUUhudVRLTW05SFNDV0E1UXZNYWYwVnZZNWN0bmliaHlSYWdNcFRNVjNCUHRfd1BvamFZZUtaVUk2NDJRNzN6ckl6OUpOMlVDTFBNWUt3SExXcFFYQXA4VnkwTGdfV2VOUzZLNnpzN3kxbHlhSkxKLWxqbngzbkFOZzBldjJnN2NlejZqOFE?oc=5",
+    "date": "Fri, 27 Nov 2026 02:24:12 GMT",
     "score": 1.0
    },
    {
@@ -373,37 +394,16 @@
     "score": 1.0
    },
    {
-    "title": "Pre-Market Update: GIFT Nifty Signals Positive Start; Crude Oil, Rupee in Focus - Dalal Street Investment Journal",
-    "source": "Dalal Street Investment Journal",
-    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQSDV2akFUS01LbEFVVzJWbm5VQ1REakNSOWRnVHpBRGNidmZxQ2hLMjFNYVdmTDVCSFlmd2pzUUhudVRLTW05SFNDV0E1UXZNYWYwVnZZNWN0bmliaHlSYWdNcFRNVjNCUHRfd1BvamFZZUtaVUk2NDJRNzN6ckl6OUpOMlVDTFBNWUt3SExXcFFYQXA4VnkwTGdfV2VOUzZLNnpzN3kxbHlhSkxKLWxqbngzbkFOZzBldjJnN2NlejZqOFE?oc=5",
-    "date": "Fri, 27 Nov 2026 02:24:12 GMT",
-    "score": 1.0
-   },
-   {
-    "title": "Asian markets end in positive zone, European indices trading up - News On AIR",
-    "source": "News On AIR",
-    "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNVUFBeU5ma01NMXlsbml1Q3AzcUU0aXRQMEd2QXBuZVZjSDRtX2Q0NTBPSkNwNkJEdzhsUTdMZEJZcWhHM2ZjSTR3R0RjM004YkZNYUtjSlR6REdXOGE5VHlGMFA2Zm1BVll2R3FvaVBvYmVfZ3NWYUhPZkhqT1M3WEpVRWFTbGpNMWxPNU5Md0Y5Zw?oc=5",
-    "date": "Thu, 26 Nov 2026 12:41:27 GMT",
-    "score": 1.0
-   },
-   {
-    "title": "Asian shares mostly rise ahead of Wall Street's reopening after the Thanksgiving holiday - ABC News - Breaking News, Latest News and Videos",
-    "source": "ABC News - Breaking News, Latest News and Videos",
-    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNUjNUclZ5dldLaDNQamhLRjFxWmV6S202aDREaDQ2ang5S3VseVhuQzN3ek9Kb2RWbE92aWx6Q3IzeTRhaEZ2MjUxOW5uRTFOc0NxQTN5NVlKWUlkYW1PeWs2V0RqU3R2dEdMeUhjMldMRHB1ZGNxSHJtOWtGSGtwYjBMYVJOdHpiMVJPanRnbXNZU1VMWjdUM1hSTdIBoAFBVV95cUxOWmgxTlA4QkY4SmhvcC0zY01MZE1sektXbXkxM2VwR3JyYUZJSU5COEp5TVpSeVZodVdpSHNWYmVmQzZ6dk43NHo1QVZoR2g2ZnltWWliOG5LSG9jSkRBdlBVNGNva1hfcDNrOEt1dTViS0JrSVM4TUMxWUlOWUFNWWRUTjVOZFBySF9SZVA1bFFPSEpZczc0WG5ZNERWb1Bm?oc=5",
-    "date": "Fri, 27 Nov 2026 02:57:26 GMT",
-    "score": 1.0
-   },
-   {
-    "title": "Rupee plunges 24 paise to 92.62 against US dollar in early trade - The Pioneer",
-    "source": "The Pioneer",
-    "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPMU9oZElRa3Baakd3d1V6VEV1RUNTUThoc1daQXJjbE54blFpdy05OFVoLUZZbEx5RUp5WThoQUhCTy04dkFvb2xHdG9YaHdxQVhERVM1SUpGc0JwNldjVEcwSlpfUXo0RmFUVGdWU3JTclppakx6Umh6NXh0WDlhX3lxWdIBkAFBVV95cUxNbXNNNjdjanROZ3dkclAxRi11VXJaTEw5ODNqYU5xZUdsaGJLaTJ0b3lyVWRUenlmbkFZVERyOENiX0NTbHFRMThlXzQ0QUNHV0lvWDJnQUNMYVU5ZEFsbnoxeTNESXhKT3JyRDVRakNMSm55cGVHSjFmMTNQLWJrX184M0wwNTNNcEc1WldTeVY?oc=5",
-    "date": "Fri, 27 Nov 2026 04:18:02 GMT",
-    "score": 0.0
+    "title": "GIFT Nifty falls, signals muted start for Sensex, Nifty today even as Asian markets gain, FII buying... - Moneycontrol.com",
+    "source": "Moneycontrol.com",
+    "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPVjNZTm5jY3BIdGZRWlBBd3BnODNOYm5xSjJoN3Q5SW9JQzVXNmZkbG9SOENyc1h1Q0lkZlV5QmIyQmdZRm42eWdnb0huLTlvUnBaZmxyRXlVTU4ybHhkUUhfVkJhZi1mMl9uTzZ3WWRVaGhvRTVmSkhFRHo3M29qMnVpX1VZSkZSa0J0cTktQ2g2RjFkTkVvczNVU1U0aDgzemp1a2pFRWdVaDdfU1pIN2haMUhkU2RidXJ5c0k5QjRDb3FBNmxwVFp2ZEtWTWRvLXNiQXp6d3BGdkRwQVB1c2ZETklGVlJPQUxIRWc4cE5zTDhxOVM5aWNST2JZd0ZvMEHSAYcCQVVfeXFMTmlJQ0JUcUJSNmtnNHJZblJOSmtEZ0lGLW41QjcxZkE3N2kxSXMyMjdjcHNVS2h4WFdoR3F1SXc0UDJlXzRycW9DaHBOLUY5V1JqLXAyUnVmdEZ6UXRpMU8wRC15dEYzQy1kVXgycXA2WnkxcVNjcy1Fb0FnY3AwcjBtdV93ZWUtbVdhYXRDRGU3bVhMT3VhY0Q0Q0UzT2lJZk5VMUVIWjM2d3BORC1sdUNWb1VoblY4MGh6TkhvWWNpbTlHUFdnSHpwdTIzcjRLNGtjM3lTVVViQVhMX2ZWdEJfOUhCbEIxMjVsRjZXbThEZTZTdlcweXFGbDNDYkFObmFaWV95cEE?oc=5",
+    "date": "Fri, 27 Nov 2026 02:57:10 GMT",
+    "score": 0.33
    }
   ],
-  "global_score": 0.75
+  "global_score": 0.611
  },
- "updated": "2026-11-27T05:58:40+00:00",
+ "updated": "2026-11-27T07:12:32+00:00",
  "errors": [
   "option chain nifty: HTTP Error 404: Not Found",
   "option chain banknifty: HTTP Error 404: Not Found"
